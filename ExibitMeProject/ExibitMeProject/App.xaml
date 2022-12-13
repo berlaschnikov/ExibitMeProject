@@ -3,6 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExibitMeProject.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <!-- Colors -->
+            <Color x:Key="PrimaryBackgroundColor">Black</Color>
+            <Color x:Key="PrimaryTextColor">white</Color>
+            <Color x:Key="PrimaryColor"></Color>
+            <!-- Styles -->
+            <!--<Style TargetType="{x:Type NavigationPage}">
+                <Setter Property="BarBackgroundColor"
+                    Value="{StaticResource NavigationBarColor}" />
+                <Setter Property="BarTextColor"
+                    Value="{StaticResource NavigationBarTextColor}" />
+            </Style>-->
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
