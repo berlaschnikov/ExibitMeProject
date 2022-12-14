@@ -58,9 +58,10 @@
                 <StackLayout x:Name="LoginGridTile"
                              Grid.Row="2"
                             Grid.Column="0"
-                            Grid.RowSpan="4"
+                            Grid.RowSpan="5"
                             Grid.ColumnSpan="2"
-                             Padding="10,50,10,10">
+                             Padding="10,50,10,10"
+                             VerticalOptions="CenterAndExpand">
                     <StackLayout
                         VerticalOptions="StartAndExpand">
                         <Label x:Name="UsernameLabel"
@@ -96,7 +97,7 @@
                 <StackLayout x:Name="ExtraGridTile"
                              Grid.Row="7"
                             Grid.Column="0"
-                            Grid.RowSpan="2"
+                            Grid.RowSpan="1"
                             Grid.ColumnSpan="2"
                              Orientation="Horizontal"
                              Margin="10">
@@ -107,7 +108,6 @@
                         FontAttributes="None"
                         Padding="0,10,0,10"
                         BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                        Margin="0,0,0,30"
                         HorizontalOptions="StartAndExpand"/>
                     <Button x:Name="ForgotPasswordLabel"
                         Text="Forgot Password?"                        
@@ -116,7 +116,6 @@
                         FontAttributes="None"
                         Padding="15,10,15,10"
                         BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                        Margin="0,0,0,30"
                         HorizontalOptions="CenterAndExpand"/>
                     <Button x:Name="DonateButton"
                         Text="Donate"                        
@@ -125,7 +124,6 @@
                         FontAttributes="None"
                         Padding="0,10,0,10"
                         BackgroundColor="{StaticResource PrimaryTextColor}"
-                        Margin="0,0,0,30"
                         HorizontalOptions="EndAndExpand"/>
                 </StackLayout>
             </Grid>
