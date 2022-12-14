@@ -35,5 +35,10 @@ namespace ExibitMeProject
                 Navigation.PushAsync(new LoginPage());
             }
         }
+
+        private void BackButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
     }
 }
