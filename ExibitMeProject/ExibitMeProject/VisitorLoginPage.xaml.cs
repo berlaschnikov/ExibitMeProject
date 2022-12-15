@@ -16,5 +16,15 @@ namespace ExibitMeProject
         {
             InitializeComponent();
         }
+
+        private void LoginButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegisterButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new VisitorRegPage());
+        }
     }
 }

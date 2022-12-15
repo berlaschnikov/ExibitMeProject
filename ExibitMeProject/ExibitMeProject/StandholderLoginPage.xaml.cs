@@ -16,5 +16,10 @@ namespace ExibitMeProject
         {
             InitializeComponent();
         }
+
+        private void RegisterButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
