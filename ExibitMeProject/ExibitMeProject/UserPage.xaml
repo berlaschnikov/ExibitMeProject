@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExibitMeProject.UserPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Row="0"
+                       Grid.Column="0"
+                       Grid.RowSpan="1"
+                       Grid.ColumnSpan="2">
+                    <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                       Padding="20,20,20,20">
+                        <StackLayout>
+                            <Label x:Name="TitleLabel"
+                                Text="ExhibitMe"
+                                TextColor="{StaticResource PrimaryTextColor}"
+                                HorizontalTextAlignment="Center"
+                                FontSize="42"
+                                HorizontalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+
+                <StackLayout x:Name="InfoGridTile"
+                             Grid.Row="1"
+                             Grid.Column="0"
+                             Grid.RowSpan="2"
+                             Grid.ColumnSpan="2">
+                    <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                       Margin="0,0,0,0"
+                       Padding="30,30,30,30">
+                        <Label x:Name="InfoLabel"
+                           Text="Welcome to the ExhibitMe App, Please select the type of user you are to login or register."
+                           TextColor="{StaticResource PrimaryTextColor}"
+                               HorizontalTextAlignment="Center"/>
+                    </Frame>
+                </StackLayout>
+
+                <Button x:Name="VisitorButton"
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Grid.RowSpan="1"
+                        Grid.ColumnSpan="2"
+                        Text="Visitor"
+                        TextColor="{StaticResource PrimaryTextColor}"
+                        FontSize="32"
+                        BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                        VerticalOptions="Start"
+                        Clicked="VisitorButton_Clicked"/>
+                <Button x:Name="StandholderButton"
+                        Grid.Row="5"
+                        Grid.Column="0"
+                        Grid.RowSpan="1"
+                        Grid.ColumnSpan="2"
+                        Text="StandHolder"
+                        TextColor="{StaticResource PrimaryTextColor}"
+                        FontSize="32"
+                        BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                        VerticalOptions="Start"
+                        Clicked="StandholderButton_Clicked"/>
+                <Button x:Name="OrganizerButton"
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        Grid.RowSpan="1"
+                        Grid.ColumnSpan="2"
+                        Text="Organizer"
+                        TextColor="{StaticResource PrimaryTextColor}"
+                        FontSize="32"
+                        BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                        VerticalOptions="Start"
+                        Clicked="OrganizerButton_Clicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
