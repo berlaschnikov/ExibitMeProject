@@ -9,12 +9,10 @@
             <Color x:Key="PrimaryTextColor">white</Color>
             <Color x:Key="PrimaryColor"></Color>
             <!-- Styles -->
-            <!--<Style TargetType="{x:Type NavigationPage}">
-                <Setter Property="BarBackgroundColor"
-                    Value="{StaticResource NavigationBarColor}" />
-                <Setter Property="BarTextColor"
-                    Value="{StaticResource NavigationBarTextColor}" />
-            </Style>-->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
+                <Setter Property="BarTextColor" Value="{StaticResource PrimaryTextColor}" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

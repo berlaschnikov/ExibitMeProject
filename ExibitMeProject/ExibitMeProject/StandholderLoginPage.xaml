@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ExibitMeProject.StandholderLoginPage">
+             x:Class="ExibitMeProject.StandholderLoginPage"
+             Title="Standholder">
     <ContentPage.Content>
         <StackLayout>
             <Grid>
@@ -40,78 +41,78 @@
 
 
                 <StackLayout x:Name="InfoGridTile"
-                             Grid.Row="1"
-                            Grid.Column="0"
-                            Grid.RowSpan="1"
-                            Grid.ColumnSpan="2">
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.RowSpan="1"
+                        Grid.ColumnSpan="2">
                     <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                        Margin="0,0,0,0"
                        Padding="30,30,30,30">
                         <Label x:Name="InfoLabel"
                            Text="Welcome to the ExhibitMe App for Standholders, Please login or if you do not already have an account then click Register."
                            TextColor="{StaticResource PrimaryTextColor}"
-                               HorizontalTextAlignment="Center"/>
+                           HorizontalTextAlignment="Center"/>
                     </Frame>
                 </StackLayout>
 
                 <StackLayout x:Name="EntryGridTile"
                         VerticalOptions="CenterAndExpand"
-                            Grid.Row="2"
-                            Grid.Column="0"
-                            Grid.RowSpan="1"
-                            Grid.ColumnSpan="2"
-                             Margin="10,50,10,0">
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.RowSpan="1"
+                        Grid.ColumnSpan="2"
+                        Margin="10,50,10,0">
                     <Label x:Name="UsernameLabel"
-                            Text="Username:"/>
+                        Text="Username:"/>
                     <Entry x:Name="UsernameEntry"
-                            Placeholder="Email or Username"
-                            Keyboard="Email"/>
+                        Placeholder="Email or Username"
+                        Keyboard="Email"/>
                 </StackLayout>
 
                 <StackLayout Grid.Row="3"
-                            Grid.Column="0"
-                            Grid.RowSpan="1"
-                            Grid.ColumnSpan="2"
-                             Margin="10,50,10,0">
+                        Grid.Column="0"
+                        Grid.RowSpan="1"
+                        Grid.ColumnSpan="2"
+                        Margin="10,50,10,0">
                     <Label x:Name="PasswordLabel"
-                            Text="Password:"/>
+                        Text="Password:"/>
                     <Entry x:Name="PasswordEntry"
-                            Placeholder="Password Here!"
-                            IsPassword="True"
-                            Margin="0,0,0,20"/>
+                        Placeholder="Password Here!"
+                        IsPassword="True"
+                        Margin="0,0,0,20"/>
                 </StackLayout>
 
                 <Button x:Name="LoginButton"
                         Grid.Row="5"
-                            Grid.Column="0"
-                            Grid.RowSpan="1"
-                            Grid.ColumnSpan="2"
-                            Text="Login"
-                            TextColor="{StaticResource PrimaryTextColor}"
-                            FontSize="32"
-                            BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                            Margin="10,0,10,0"
-                            Clicked="LoginButton_Clicked"/>
+                        Grid.Column="0"
+                        Grid.RowSpan="1"
+                        Grid.ColumnSpan="2"
+                        Text="Login"
+                        TextColor="{StaticResource PrimaryTextColor}"
+                        FontSize="32"
+                        BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                        Margin="10,0,10,0"
+                        Clicked="LoginButton_Clicked"/>
 
                 <Button x:Name="RegisterButton"
-                            Grid.Row="6"
-                            Grid.Column="0"
-                            Grid.RowSpan="1"
-                            Grid.ColumnSpan="2"
-                            Text="Register"
-                            TextColor="{StaticResource PrimaryTextColor}"
-                            FontSize="32"
-                            BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                            Margin="10,0,10,0"
-                            Clicked="RegisterButton_Clicked"/>
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        Grid.RowSpan="1"
+                        Grid.ColumnSpan="2"
+                        Text="Register"
+                        TextColor="{StaticResource PrimaryTextColor}"
+                        FontSize="32"
+                        BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                        Margin="10,0,10,0"
+                        Clicked="RegisterButton_Clicked"/>
 
                 <StackLayout x:Name="ExtraGridTile"
-                             Grid.Row="7"
-                            Grid.Column="0"
-                            Grid.RowSpan="1"
-                            Grid.ColumnSpan="2"
-                             Orientation="Horizontal"
-                             Margin="10">
+                        Grid.Row="7"
+                        Grid.Column="0"
+                        Grid.RowSpan="1"
+                        Grid.ColumnSpan="2"
+                        Orientation="Horizontal"
+                        Margin="10">
                     <Button x:Name="AboutButton"
                         Text="About"
                         TextColor="{StaticResource PrimaryTextColor}"

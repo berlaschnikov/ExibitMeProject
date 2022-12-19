@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExibitMeProject.UserPage"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasBackButton="False">
     <ContentPage.Content>
         <StackLayout>
             <Grid>
@@ -41,17 +41,17 @@
 
 
                 <StackLayout x:Name="InfoGridTile"
-                             Grid.Row="1"
-                             Grid.Column="0"
-                             Grid.RowSpan="2"
-                             Grid.ColumnSpan="2">
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.RowSpan="2"
+                        Grid.ColumnSpan="2">
                     <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                       Margin="0,0,0,0"
-                       Padding="30,30,30,30">
+                        Margin="0,0,0,0"
+                        Padding="30,30,30,30">
                         <Label x:Name="InfoLabel"
-                           Text="Welcome to the ExhibitMe App, Please select the type of user you are to login or register."
-                           TextColor="{StaticResource PrimaryTextColor}"
-                               HorizontalTextAlignment="Center"/>
+                            Text="Welcome to the ExhibitMe App, Please select the type of user you are to login or register."
+                            TextColor="{StaticResource PrimaryTextColor}"
+                            HorizontalTextAlignment="Center"/>
                     </Frame>
                 </StackLayout>
 
