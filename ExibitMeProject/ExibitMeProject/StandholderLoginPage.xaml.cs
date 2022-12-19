@@ -26,10 +26,5 @@ namespace ExibitMeProject
         {
             Navigation.PushAsync(new StandholderMainPage());
         }
-
-        private void LoginButton_Clicked(object sender, EventArgs e)
-        {
-
-        }
     }
 }
