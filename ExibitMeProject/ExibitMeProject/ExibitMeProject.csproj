@@ -14,6 +14,7 @@
     <PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2545" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.4" />
+    <PackageReference Include="ZXing.Net.Mobile" Version="3.1.0-beta2" />
   </ItemGroup>
 
   <ItemGroup>

@@ -86,6 +86,14 @@
                         VerticalOptions="EndAndExpand"
                         Padding="30"
                         Clicked="OrganizerButton_Clicked"/>
+                    <Button x:Name="QrTestButton"
+                        Text="Qr Test Button"
+                        TextColor="{StaticResource PrimaryTextColor}"
+                        FontSize="40"
+                        BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                        VerticalOptions="EndAndExpand"
+                        Padding="30"
+                        Clicked="QrTestButton_Clicked"/>
                 </StackLayout>                
             </Grid>
         </StackLayout>

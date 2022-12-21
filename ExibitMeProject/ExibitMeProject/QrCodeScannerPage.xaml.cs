@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExibitMeProject.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,23 @@ namespace ExibitMeProject
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private async void ScanButton_Clicked(object sender, EventArgs e)
+        {
+			try
+			{
+				var scanner = DependencyService.Get<IQrScanningService>();
+				var result = await scanner.ScanAsync();
+				if (result != null)
+				{
+					TxtBarcode.Text = result;
+				}
+			}
+			catch (Exception ex)
+			{
+
+				throw;
+			}
+		}
+    }
 }

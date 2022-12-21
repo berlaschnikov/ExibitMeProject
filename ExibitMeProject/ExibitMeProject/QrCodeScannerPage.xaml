@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExibitMeProject.QrCodeScannerPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Spacing="10">
+            <Button Text="Scan"
+                    x:Name="ScanButton"
+                    Clicked="ScanButton_Clicked"/>
+            <Entry x:Name="TxtBarcode"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

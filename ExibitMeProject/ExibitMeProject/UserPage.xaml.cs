@@ -31,5 +31,10 @@ namespace ExibitMeProject
         {
             Navigation.PushAsync(new OrganizerLoginPage());
         }
+
+        private void QrTestButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new QrCodeScannerPage());
+        }
     }
 }
