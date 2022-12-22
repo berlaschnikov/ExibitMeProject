@@ -34,7 +34,7 @@ namespace ExibitMeProject
 
         private void QrTestButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new QrCodeScannerPage());
+            Navigation.PushAsync(new QrCodeGeneratorPage());
         }
     }
 }
