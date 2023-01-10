@@ -7,6 +7,11 @@
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Image/>
+            <Entry x:Name="TestEntry"/>
+            <Button x:Name="TestButton"
+                    Text="Test"
+                    Clicked="TestButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

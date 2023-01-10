@@ -27,5 +27,15 @@ namespace ExibitMeProject.Models
         public string Phone { get; set; }
         [MaxLength(200)]
         public string Occupation { get; set; }
+        
+        //public string VisitorToStringPrivate()
+        //{
+        //    //Deze is voor wanneer de visitor niet alle gegevens wil delen
+        //}
+        public string VisitorToStringFull()
+        {
+            string ObjectString = this.ToString();
+            return ObjectString;
+        }
     }
 }
