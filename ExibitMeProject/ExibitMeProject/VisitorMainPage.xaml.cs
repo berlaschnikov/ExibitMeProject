@@ -34,5 +34,10 @@ namespace ExibitMeProject
         {
             Navigation.PushAsync(new QrCodeGeneratorPage(Visitor));
         }
+
+        private async void HistoryButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new HistoryPage());
+        }
     }
 }
