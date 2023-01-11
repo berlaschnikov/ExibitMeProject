@@ -33,5 +33,10 @@ namespace ExibitMeProject
             visitor.Occupation = "Hosselaar";
             TestEntry.Text = visitor.VisitorToStringFull();
         }
+
+        private async void HistoryButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new HistoryPage());
+        }
     }
 }
