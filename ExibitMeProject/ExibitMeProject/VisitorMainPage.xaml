@@ -12,7 +12,7 @@
             <Button x:Name="TestButton"
                     Text="Test"
                     Clicked="TestButton_Clicked"/>
-            <Button Text="History" Clicked="HistoryButton_Clicked"
+            <Button Text="History" Clicked="HistoryButton_Clicked"/>
             <Button x:Name="GenerateQrCodeFullButton"
                     Text="Generate QrCode Full"
                     Clicked="GenerateQrCodeFullButton_Clicked"/>

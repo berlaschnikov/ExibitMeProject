@@ -1,9 +1,9 @@
 ﻿using System;
-
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using Xamarin.Forms;
 
 namespace ExibitMeProject.Droid
 {
@@ -24,6 +24,6 @@ namespace ExibitMeProject.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
+        }        
     }
 }

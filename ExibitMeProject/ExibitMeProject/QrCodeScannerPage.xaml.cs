@@ -1,4 +1,5 @@
-﻿using ExibitMeProject.Services;
+﻿using ExibitMeProject.Models;
+using ExibitMeProject.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace ExibitMeProject
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class QrCodeScannerPage : ContentPage
 	{
+		Visitor Visitor;
 		public QrCodeScannerPage ()
 		{
 			InitializeComponent ();
