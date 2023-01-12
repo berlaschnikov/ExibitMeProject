@@ -1,5 +1,6 @@
 ﻿using ExibitMeProject.Models;
 using ExibitMeProject.Services;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,8 @@ namespace ExibitMeProject
 				var result = await scanner.ScanAsync();
 				if (result != null)
 				{
-					TxtBarcode.Text = result;
+                    Visitor = JsonConvert.DeserializeObject<Visitor>(result);
+                    TxtBarcode.Text = result;
 				}
 			}
 			catch (Exception ex)
