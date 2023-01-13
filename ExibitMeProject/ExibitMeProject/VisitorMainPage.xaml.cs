@@ -24,20 +24,20 @@ namespace ExibitMeProject
             InitializeComponent();
             Visitor = CurrentVisitor;
         }
-        private void TestButton_Clicked(object sender, EventArgs e)
-        {
-            
-            TestEntry.Text = JsonConvert.SerializeObject(Visitor);
-        }
 
         private void GenerateQrCodeFullButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new QrCodeGeneratorPage(Visitor));
         }
 
-        private async void HistoryButton_Clicked(object sender, EventArgs e)
+        private void HistoryButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new HistoryPage());
+        }
+
+        private void ScanQrCodeButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Views.Visitor.VisitorQrCodeScannerPage());
         }
     }
 }
