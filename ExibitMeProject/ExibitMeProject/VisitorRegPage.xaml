@@ -81,17 +81,23 @@
                             </StackLayout>
                         </StackLayout>
 
-                        <StackLayout x:Name="Street"
-                             Grid.Row="4"
-                            Grid.Column="0"
-                            Grid.RowSpan="2"
-                            Grid.ColumnSpan="2">
+                        <StackLayout Grid.Row="4"
+                                            Grid.Column="0"
+                                            Grid.RowSpan="2"
+                                            Grid.ColumnSpan="2"
+                                            IsVisible="{Binding shareData}">
                             <StackLayout
                         VerticalOptions="StartAndExpand">
                                 <Label x:Name="Streetlabel"
                             Text="Street:"/>
                                 <Entry x:Name="StreetEntry"
                             Placeholder="Street"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
+                            <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                                <CheckBox x:Name="ShareDataOptio" IsChecked="{Binding shareData}"/>
+                                <Label Text="Fill only the necessarily options" />
                             </StackLayout>
                         </StackLayout>
 
@@ -109,11 +115,23 @@
                             </StackLayout>
                         </StackLayout>
 
+                        <StackLayout Grid.Row="6"
+                                         Grid.Column="0"
+                                         Grid.ColumnSpan="2">
+                            <StackLayout
+                                     Orientation="Horizontal"
+                                     VerticalOptions="StartAndExpand">
+                                <CheckBox x:Name="ShareDataOption" IsChecked="{Binding shareData}"/>
+                                <Label Text="Fill only the necessarily options" />
+                            </StackLayout>
+                        </StackLayout>
+
                         <StackLayout x:Name="City"
-                             Grid.Row="6"
+                             Grid.Row="7"
                             Grid.Column="0"
                             Grid.RowSpan="2"
-                            Grid.ColumnSpan="2">
+                            Grid.ColumnSpan="2"
+                            IsVisible="{Binding shareData}">
                             <StackLayout
                         VerticalOptions="StartAndExpand">
                                 <Label x:Name="Citylabel"
@@ -124,7 +142,7 @@
                         </StackLayout>
 
                         <StackLayout x:Name="State"
-                             Grid.Row="7"
+                             Grid.Row="8"
                             Grid.Column="0"
                             Grid.RowSpan="2"
                             Grid.ColumnSpan="2">
@@ -138,7 +156,7 @@
                         </StackLayout>
 
                         <StackLayout x:Name="Country"
-                             Grid.Row="8"
+                             Grid.Row="9"
                             Grid.Column="0"
                             Grid.RowSpan="2"
                             Grid.ColumnSpan="2">
@@ -152,7 +170,7 @@
                         </StackLayout>
 
                         <StackLayout x:Name="Phone"
-                             Grid.Row="9"
+                             Grid.Row="10"
                             Grid.Column="0"
                             Grid.RowSpan="2"
                             Grid.ColumnSpan="2">
@@ -166,7 +184,7 @@
                         </StackLayout>
 
                         <StackLayout x:Name="Occupation"
-                             Grid.Row="10"
+                             Grid.Row="11"
                             Grid.Column="0"
                             Grid.RowSpan="2"
                             Grid.ColumnSpan="2">
