@@ -23,7 +23,7 @@ namespace ExibitMeProject.Droid
             string fullPath = Path.Combine(folderPath, dbName);
             LoadApplication(new App(fullPath));
             //Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 0, 0, 0));
-            LoadApplication(new App());
+            //LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

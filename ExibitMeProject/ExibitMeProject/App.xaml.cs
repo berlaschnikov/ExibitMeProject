@@ -14,7 +14,6 @@ namespace ExibitMeProject
         public App()
         {
             InitializeComponent();
-
             MainPage = new NavigationPage(new UserPage());
         }
 

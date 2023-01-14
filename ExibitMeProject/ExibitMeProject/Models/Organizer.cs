@@ -12,5 +12,6 @@ namespace ExibitMeProject.Models
         [MaxLength(100)]
         public string Name { get; set; }
         public string Organisation { get; set; }
+        public string Password { get; set; }
     }
 }
