@@ -4,6 +4,7 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using Xamarin.Forms;
+using System.IO;
 
 namespace ExibitMeProject.Droid
 {
@@ -16,7 +17,12 @@ namespace ExibitMeProject.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 0, 0, 0));
+
+            string dbName = "ExibitMeProject";
+            string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string fullPath = Path.Combine(folderPath, dbName);
+            LoadApplication(new App(fullPath));
+            //Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 0, 0, 0));
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
