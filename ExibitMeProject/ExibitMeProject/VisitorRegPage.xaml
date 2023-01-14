@@ -22,16 +22,7 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>                        
                     </Grid.RowDefinitions>
 
                     <Grid.ColumnDefinitions>
@@ -43,8 +34,7 @@
                              Grid.Column="0"
                              Grid.RowSpan="1"
                              Grid.ColumnSpan="2">
-                        <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                       >
+                        <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}">                            
                             <StackLayout>
                                 <Label x:Name="TitleLabel"
                                 Text="Visitor Register Page!"
@@ -68,10 +58,24 @@
                         </Frame>
                     </StackLayout>
 
+                    <StackLayout 
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Grid.RowSpan="1"
+                                Grid.ColumnSpan="2"
+                                 Orientation="Horizontal">    
+                        <CheckBox x:Name="ShareDataOption"
+                                  IsChecked="{Binding shareData}"
+                                  HorizontalOptions="Start"/>
+                        <Label Text="Fill Only Necessary Options"
+                               HorizontalOptions="EndAndExpand"
+                               VerticalTextAlignment="Center"/>
+                    </StackLayout>
+
                     <StackLayout x:Name="FullName"
-                            Grid.Row="2"
+                            Grid.Row="3"
                         Grid.Column="0"
-                        Grid.RowSpan="2"
+                        Grid.RowSpan="1"
                         Grid.ColumnSpan="2"
                         VerticalOptions="StartAndExpand">
                         <Label x:Name="FullNameLabel"
@@ -83,7 +87,7 @@
                     <StackLayout x:Name="EmailAddress"
                              Grid.Row="4"
                             Grid.Column="0"
-                            Grid.RowSpan="2"
+                            Grid.RowSpan="1"
                             Grid.ColumnSpan="2">
                         <Label x:Name="EmailAddresslabel"
                             Text="EmailAddress:"/>
@@ -92,9 +96,9 @@
                     </StackLayout>
 
                     <StackLayout x:Name="Street"
-                             Grid.Row="6"
+                             Grid.Row="5"
                             Grid.Column="0"
-                            Grid.RowSpan="2"
+                            Grid.RowSpan="1"
                             Grid.ColumnSpan="2">
                         <Label x:Name="Streetlabel"
                             Text="Street:"/>
@@ -103,9 +107,9 @@
                     </StackLayout>
 
                     <StackLayout x:Name="PostalCode"
-                             Grid.Row="8"
+                             Grid.Row="6"
                             Grid.Column="0"
-                            Grid.RowSpan="2"
+                            Grid.RowSpan="1"
                             Grid.ColumnSpan="2">
                         <Label x:Name="PostalCodelabel"
                                     Text="PostalCode:"/>
@@ -114,9 +118,9 @@
                     </StackLayout>
 
                     <StackLayout x:Name="City"
-                            Grid.Row="10"
+                            Grid.Row="7"
                             Grid.Column="0"
-                            Grid.RowSpan="2"
+                            Grid.RowSpan="1"
                             Grid.ColumnSpan="2">
                         <Label x:Name="Citylabel"
                                     Text="City:"/>
@@ -125,9 +129,9 @@
                     </StackLayout>
 
                     <StackLayout x:Name="State"
-                            Grid.Row="12"
+                            Grid.Row="8"
                             Grid.Column="0"
-                            Grid.RowSpan="2"
+                            Grid.RowSpan="1"
                             Grid.ColumnSpan="2">
                         <Label x:Name="Statelabel"
                                     Text="State:"/>
@@ -136,9 +140,9 @@
                     </StackLayout>
 
                     <StackLayout x:Name="Country"
-                            Grid.Row="14"
+                            Grid.Row="9"
                             Grid.Column="0"
-                            Grid.RowSpan="2"
+                            Grid.RowSpan="1"
                             Grid.ColumnSpan="2">
                         <Label x:Name="Countrylabel"
                                     Text="Country:"/>
@@ -147,9 +151,9 @@
                     </StackLayout>
 
                     <StackLayout x:Name="Phone"
-                            Grid.Row="16"
+                            Grid.Row="10"
                             Grid.Column="0"
-                            Grid.RowSpan="2"
+                            Grid.RowSpan="1"
                             Grid.ColumnSpan="2">
                         <Label x:Name="Phonelabel"
                                     Text="Phone:"/>
@@ -158,9 +162,9 @@
                     </StackLayout>
 
                     <StackLayout x:Name="Occupation"
-                            Grid.Row="18"
+                            Grid.Row="11"
                             Grid.Column="0"
-                            Grid.RowSpan="2"
+                            Grid.RowSpan="1"
                             Grid.ColumnSpan="2">
                         <Label x:Name="Occupationlabel"
                                     Text="Occupation:"/>
@@ -169,7 +173,7 @@
                     </StackLayout>
 
                     <StackLayout VerticalOptions="EndAndExpand"
-                                Grid.Row="20"
+                                Grid.Row="12"
                                 Grid.Column="0"
                                 Grid.RowSpan="1"
                                 Grid.ColumnSpan="2">
