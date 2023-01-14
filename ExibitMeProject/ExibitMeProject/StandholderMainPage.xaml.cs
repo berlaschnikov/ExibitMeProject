@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExibitMeProject.Views.Standholder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,6 +36,11 @@ namespace ExibitMeProject
         private void GoToQRPage_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new QrCodeScannerPage());
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new QuestionQrCodeGeneratorPage());
         }
     }
 }

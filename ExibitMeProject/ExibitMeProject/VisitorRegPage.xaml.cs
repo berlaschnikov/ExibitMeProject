@@ -22,6 +22,7 @@ namespace ExibitMeProject
         private void RegisterButton_Clicked(object sender, EventArgs e)
         {
             using SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation);
+            sQLiteConnection.CreateTable<Visitor>();
             sQLiteConnection.Insert(new Visitor { FullName = FullNameEntry.Text, EmailAddress = EmailAddressEntry.Text, Street = StreetEntry.Text, PostalCode = PostalCodeEntry.Text, City = CityEntry.Text, State = StateEntry .Text, Country = CountryEntry.Text, Phone = PhoneEntry.Text, Occupation = OccupationEntry.Text });
             Application.Current.Properties["FullName"] = FullNameEntry.Text;
             Application.Current.Properties["EmailAddress"] = EmailAddressEntry.Text;
@@ -35,12 +36,6 @@ namespace ExibitMeProject
             DisplayAlert("", "Registration Succesful!", "OK");
             Xamarin.Essentials.Vibration.Vibrate(2000);
             Navigation.PushAsync(new VisitorLoginPage());
-        }
-    
-
-        private void BackButton_Clicked(object sender, EventArgs e)
-        {
-
         }
     }
 }

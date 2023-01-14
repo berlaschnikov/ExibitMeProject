@@ -21,9 +21,8 @@ namespace ExibitMeProject.Droid
             string dbName = "ExibitMeProject";
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string fullPath = Path.Combine(folderPath, dbName);
+            Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 0, 0, 0));
             LoadApplication(new App(fullPath));
-            //Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 0, 0, 0));
-            //LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

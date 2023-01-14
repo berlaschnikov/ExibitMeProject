@@ -29,12 +29,17 @@
                     HorizontalOptions="Center"
                     Clicked="ViewTurnoverPage_Clicked"/>
 
-            <Button Text="Go to QR"
+            <Button Text="QR Scanner"
                     VerticalOptions="CenterAndExpand"
                     HorizontalOptions="Center"
                     Clicked="GoToQRPage_Clicked"/>
-            
-            
+
+            <Button Text="QR Generator"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    Clicked="Button_Clicked"/>
+
+
             <Button Text="View Visitors"
                     VerticalOptions="CenterAndExpand"
                     HorizontalOptions="Center"
