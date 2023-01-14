@@ -14,20 +14,14 @@ namespace ExibitMeProject
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VisitorMainPage : ContentPage
     {
-        public Visitor Visitor;
         public VisitorMainPage()
         {
             InitializeComponent();
         }
-        public VisitorMainPage(Visitor CurrentVisitor)
-        {
-            InitializeComponent();
-            Visitor = CurrentVisitor;
-        }
 
         private void GenerateQrCodeFullButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new QrCodeGeneratorPage(Visitor));
+            Navigation.PushAsync(new QrCodeGeneratorPage());
         }
 
         private void HistoryButton_Clicked(object sender, EventArgs e)

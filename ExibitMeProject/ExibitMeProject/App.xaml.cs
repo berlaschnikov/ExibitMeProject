@@ -21,7 +21,7 @@ namespace ExibitMeProject
         {
             InitializeComponent();
             DatabaseLocation = databaseLocation;
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new NavigationPage(new UserPage());
         }
 
         protected override void OnStart()

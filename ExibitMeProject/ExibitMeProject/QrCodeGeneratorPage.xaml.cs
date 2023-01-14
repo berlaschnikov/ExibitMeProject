@@ -18,16 +18,10 @@ namespace ExibitMeProject
     public partial class QrCodeGeneratorPage : ContentPage
     {
         public string VisitorString { get; set; }
-        Visitor Visitor;
         public QrCodeGeneratorPage()
         {
-            InitializeComponent();            
-        }
-        public QrCodeGeneratorPage(Visitor CurrentVisitor)
-        {
             InitializeComponent();
-            Visitor = CurrentVisitor;
-            VisitorString = JsonConvert.SerializeObject(Visitor);
+            VisitorString = JsonConvert.SerializeObject(App.CurrentAppVisitor);
         }
 
         private void ConvertButton_Clicked(object sender, EventArgs e)
