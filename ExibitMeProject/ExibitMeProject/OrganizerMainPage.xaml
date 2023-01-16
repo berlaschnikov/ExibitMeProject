@@ -7,9 +7,31 @@
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Picker x:Name="FilterPicker" SelectedIndexChanged="OnFilterChanged">
+                <Picker.Items>
+                    <x:String>Month</x:String>
+                    <x:String>Week</x:String>
+                    <x:String>Day</x:String>
+                </Picker.Items>
+            </Picker>
+            <ListView x:Name="DataListView" ItemTemplate="{StaticResource DataTemplate}"></ListView>
             <Button x:Name="ViewRushButton"
                     Text="View Rush"
                     Clicked="ViewRushButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="DataTemplate">
+                <ViewCell>
+                    <StackLayout>
+                        <Label Text="{Binding Date}"></Label>
+                        <Label Text="{Binding Value}"></Label>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 </ContentPage>
+
+
