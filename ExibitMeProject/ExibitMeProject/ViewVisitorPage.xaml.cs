@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace ExibitMeProject
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class OrganizerMainPage : ContentPage
+    public partial class ViewVisitorPage : ContentPage
     {
-        public OrganizerMainPage()
+        public ViewVisitorPage()
         {
             InitializeComponent();
-        }
-
-        private void ViewRushButton_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new RushPage());
         }
     }
 }

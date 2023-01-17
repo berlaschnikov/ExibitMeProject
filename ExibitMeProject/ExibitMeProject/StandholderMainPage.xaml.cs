@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExibitMeProject.Views.Standholder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,31 @@ namespace ExibitMeProject
         public StandholderMainPage()
         {
             InitializeComponent();
+        }
+
+        private void ViewReviewPage_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ViewReviewPage());
+        }
+
+        private void ViewVisitorPage_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ViewVisitorPage());
+        }
+
+        private void ViewTurnoverPage_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new VIewTurnoverPage());
+        }
+
+        private void GoToQRPage_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new QrCodeScannerPage());
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new QuestionQrCodeGeneratorPage());
         }
     }
 }

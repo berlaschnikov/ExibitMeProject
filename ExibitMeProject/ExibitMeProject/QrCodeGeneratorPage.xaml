@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExibitMeProject.QrCodeGeneratorPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="InputText"/>
+            <Picker x:Name="ECCLevelPicker"
+                    Title="Select ECC Level">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>L</x:String>
+                        <x:String>M</x:String>
+                        <x:String>Q</x:String>
+                        <x:String>H</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Image x:Name="QrCodeImage"/>
+            <Button x:Name="ConvertButton"
+                    Text="Convert"
+                    Clicked="ConvertButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

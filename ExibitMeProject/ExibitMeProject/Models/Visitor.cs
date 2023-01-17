@@ -13,6 +13,8 @@ namespace ExibitMeProject.Models
         public string FullName { get; set; }
         [MaxLength(75)]
         public string EmailAddress { get; set; }
+        [MaxLength(25)]
+        public string Password { get; set; }
         [MaxLength(90)]
         public string Street { get; set; }
         [MaxLength(11)]
@@ -27,5 +29,6 @@ namespace ExibitMeProject.Models
         public string Phone { get; set; }
         [MaxLength(200)]
         public string Occupation { get; set; }
+        
     }
 }

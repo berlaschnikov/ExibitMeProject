@@ -7,6 +7,16 @@
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Image/>
+            <Button x:Name="HistoryButton"
+                    Text="History" 
+                    Clicked="HistoryButton_Clicked"/>
+            <Button x:Name="GenerateQrCodeFullButton"
+                    Text="Generate QrCode Full"
+                    Clicked="GenerateQrCodeFullButton_Clicked"/>
+            <Button x:Name="ScanQrCodeButton"
+                    Text="Scan QrCode"
+                    Clicked="ScanQrCodeButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
