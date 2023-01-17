@@ -37,7 +37,7 @@ namespace ExibitMeProject
         private void LoginButton_Clicked(object sender, EventArgs e)
         {
             SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation);
-            var visitor = sQLiteConnection.Table<Visitor>().Where(visitor => visitor.EmailAddress == EmailEntry.Text && visitor.Password == PasswordEntry.Text).FirstOrDefault();
+            var visitor = sQLiteConnection.Table<Visitor>().Where(visitor => visitor.EmailAddress == UsernameEntry.Text && visitor.Password == PasswordEntry.Text).FirstOrDefault();
             if (visitor == null)
             {
                 DisplayAlert("", "Login Failed!", "OK");
