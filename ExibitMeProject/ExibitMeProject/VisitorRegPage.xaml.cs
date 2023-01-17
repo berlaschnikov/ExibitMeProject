@@ -41,7 +41,7 @@ namespace ExibitMeProject
                 Application.Current.Properties["Phone"] = PhoneEntry.Text;
                 DisplayAlert("", "Registration Succesful!", "OK");
                 Xamarin.Essentials.Vibration.Vibrate(2000);
-                Navigation.PushAsync(new VisitorLoginPage());
+                Navigation.PopAsync();
             }
             else
             {
@@ -59,7 +59,7 @@ namespace ExibitMeProject
                 Application.Current.Properties["Occupation"] = OccupationEntry.Text;
                 DisplayAlert("", "Registration Succesful!", "OK");
                 Xamarin.Essentials.Vibration.Vibrate(2000);
-                Navigation.PushAsync(new VisitorLoginPage());
+                Navigation.PopAsync();
             }
         }
 

@@ -4,7 +4,7 @@
              x:Class="ExibitMeProject.VisitorLoginPage"
              Title="Visitor">
     <ContentPage.Content>
-        <StackLayout Margin="25">
+        <StackLayout >
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
