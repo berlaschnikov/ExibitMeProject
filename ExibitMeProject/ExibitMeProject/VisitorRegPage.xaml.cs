@@ -28,8 +28,8 @@ namespace ExibitMeProject
             if (viewModel.shareData)
             {
                 using SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation);
-                sQLiteConnection.Insert(new Visitor { FullName = FullNameEntry.Text, EmailAddress = EmailAddressEntry.Text, Phone = PhoneEntry.Text });
                 sQLiteConnection.CreateTable<Visitor>();
+                sQLiteConnection.Insert(new Visitor { FullName = FullNameEntry.Text, EmailAddress = EmailAddressEntry.Text, Phone = PhoneEntry.Text });
                 Application.Current.Properties["FullName"] = FullNameEntry.Text;
                 Application.Current.Properties["EmailAddress"] = EmailAddressEntry.Text;
                 Application.Current.Properties["Phone"] = PhoneEntry.Text;
@@ -40,8 +40,8 @@ namespace ExibitMeProject
             else
             {
                 using SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation);
-                sQLiteConnection.Insert(new Visitor { FullName = FullNameEntry.Text, EmailAddress = EmailAddressEntry.Text, Street = StreetEntry.Text, PostalCode = PostalCodeEntry.Text, City = CityEntry.Text, State = StateEntry.Text, Country = CountryEntry.Text, Phone = PhoneEntry.Text, Occupation = OccupationEntry.Text });
                 sQLiteConnection.CreateTable<Visitor>();
+                sQLiteConnection.Insert(new Visitor { FullName = FullNameEntry.Text, EmailAddress = EmailAddressEntry.Text, Street = StreetEntry.Text, PostalCode = PostalCodeEntry.Text, City = CityEntry.Text, State = StateEntry.Text, Country = CountryEntry.Text, Phone = PhoneEntry.Text, Occupation = OccupationEntry.Text });
                 Application.Current.Properties["FullName"] = FullNameEntry.Text;
                 Application.Current.Properties["EmailAddress"] = EmailAddressEntry.Text;
                 Application.Current.Properties["Street"] = StreetEntry.Text;
