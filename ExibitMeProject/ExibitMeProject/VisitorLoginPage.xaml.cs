@@ -38,16 +38,19 @@ namespace ExibitMeProject
         {
             SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation);
             var visitor = sQLiteConnection.Table<Visitor>().Where(visitor => visitor.EmailAddress == EmailEntry.Text && visitor.Password == PasswordEntry.Text).FirstOrDefault();
-            if (visitor == null)
+            if (visitor != null)
+            {
+                App.CurrentAppVisitor = visitor;
+                DisplayAlert("Login Succesful!", "Welcome " + visitor.EmailAddress + "!", "OK");
+                Xamarin.Essentials.Vibration.Vibrate(2000);
+                Navigation.PushAsync(new VisitorMainPage());
+            }
+            else
             {
                 DisplayAlert("", "Login Failed!", "OK");
                 Xamarin.Essentials.Vibration.Vibrate(2000);
                 return;
-            }
-            App.CurrentAppVisitor = visitor;
-            DisplayAlert("Login Succesful!", "Welcome " + visitor.EmailAddress + "!", "OK");
-            Xamarin.Essentials.Vibration.Vibrate(2000);
-            Navigation.PushAsync(new VisitorMainPage());
+            }            
         }
 
         private void RegisterButton_Clicked(object sender, EventArgs e)

@@ -42,7 +42,7 @@ namespace ExibitMeProject
                 Xamarin.Essentials.Vibration.Vibrate(2000);
             }
 
-            Navigation.PushAsync(new OrganizerLoginPage());
+            Navigation.PopAsync();
 
 
 

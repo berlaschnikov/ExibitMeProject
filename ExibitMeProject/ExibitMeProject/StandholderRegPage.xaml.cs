@@ -42,7 +42,7 @@ namespace ExibitMeProject
                 Xamarin.Essentials.Vibration.Vibrate(2000);
             }
 
-            Navigation.PushAsync(new StandholderLoginPage());
+            Navigation.PopAsync();
 
             //using SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation);
             //sQLiteConnection.Insert(new Standholder { Name = NameEntry.Text, Company = CompanyEntry.Text, Password = PasswordEntry.Text });

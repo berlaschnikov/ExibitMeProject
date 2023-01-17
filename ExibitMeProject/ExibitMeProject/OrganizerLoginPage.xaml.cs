@@ -28,16 +28,20 @@ namespace ExibitMeProject
         {
             SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation);
             var organizer = sQLiteConnection.Table<Organizer>().Where(organizer => organizer.Name == UsernameEntry.Text && organizer.Password == PasswordEntry.Text).FirstOrDefault();
-            if (organizer == null)
+            if (organizer != null)
+            {
+                App.CurrentAppOrganizer = organizer;
+                DisplayAlert("Login Succesful!", "Welcome " + organizer.Name + "!", "OK");
+                Xamarin.Essentials.Vibration.Vibrate(2000);
+                Navigation.PushAsync(new OrganizerMainPage());
+            }
+            else
             {
                 DisplayAlert("", "Login Failed!", "OK");
                 Xamarin.Essentials.Vibration.Vibrate(2000);
                 return;
             }
-            App.CurrentAppOrganizer = organizer;
-            DisplayAlert("Login Succesful!", "Welcome " + organizer.Name + "!", "OK");
-            Xamarin.Essentials.Vibration.Vibrate(2000);
-            Navigation.PushAsync(new OrganizerMainPage());
+            
         }
     }
 }

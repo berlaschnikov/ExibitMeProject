@@ -28,16 +28,19 @@ namespace ExibitMeProject
         {
             SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation);
             var standholder = sQLiteConnection.Table<Standholder>().Where(standholder => standholder.Name == UsernameEntry.Text && standholder.Password == PasswordEntry.Text).FirstOrDefault();
-            if (standholder == null)
+            if (standholder != null)
+            {
+                App.CurrentAppStandholder = standholder;
+                DisplayAlert("Login Succesful!", "Welcome " + standholder.Name + "!", "OK");
+                Xamarin.Essentials.Vibration.Vibrate(2000);
+                Navigation.PushAsync(new StandholderMainPage());
+            }
+            else
             {
                 DisplayAlert("", "Login Failed!", "OK");
                 Xamarin.Essentials.Vibration.Vibrate(2000);
                 return;
-            }
-            App.CurrentAppStandholder = standholder;
-            DisplayAlert("Login Succesful!", "Welcome " + standholder.Name + "!", "OK");
-            Xamarin.Essentials.Vibration.Vibrate(2000);
-            Navigation.PushAsync(new StandholderMainPage());
+            }            
         }
     }
 }
