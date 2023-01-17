@@ -97,13 +97,7 @@
                             BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                                 VerticalOptions="Start"
                             Clicked="RegisterButton_Clicked"/>
-                        <Button x:Name="BackButton"
-                            Text="Back"
-                            TextColor="{StaticResource PrimaryTextColor}"
-                            FontSize="32"
-                            BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                VerticalOptions="End"
-                            Clicked="BackButton_Clicked"/>
+                        
                     </StackLayout>
                 </StackLayout>
             </Grid>
