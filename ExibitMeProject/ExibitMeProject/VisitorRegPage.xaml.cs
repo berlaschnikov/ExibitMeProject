@@ -22,10 +22,6 @@ namespace ExibitMeProject
         {
             InitializeComponent();
             this.BindingContext = new VisitorRegPageViewModel();
-
-
-
-
         }
 
         private void RegisterButton_Clicked(object sender, EventArgs e)
