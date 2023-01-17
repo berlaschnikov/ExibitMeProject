@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:converters="clr-namespace:ExibitMeProject"
              x:Class="ExibitMeProject.VisitorRegPage">
+
+
     <ContentPage.Content>
         <ScrollView>
 
@@ -66,7 +70,8 @@
                                  Orientation="Horizontal">    
                         <CheckBox x:Name="ShareDataOption"
                                   IsChecked="{Binding shareData}"
-                                  HorizontalOptions="Start"/>
+                                  HorizontalOptions="Start"
+                                  CheckedChanged="ShareDataOption_CheckedChanged"/>
                         <Label Text="Fill Only Necessary Options"
                                HorizontalOptions="EndAndExpand"
                                VerticalTextAlignment="Center"/>
@@ -158,7 +163,7 @@
                         <Label x:Name="Phonelabel"
                                     Text="Phone:"/>
                         <Entry x:Name="PhoneEntry"
-                                    Placeholder="Phone"/>
+                                    Placeholder="Phone"/>   
                     </StackLayout>
 
                     <StackLayout x:Name="Occupation"
