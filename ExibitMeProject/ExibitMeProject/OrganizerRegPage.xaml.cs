@@ -22,9 +22,10 @@ namespace ExibitMeProject
         private void RegisterButton_Clicked(object sender, EventArgs e)
         {
             using SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation);
-            sQLiteConnection.Insert(new Organizer { Name = NameEntry.Text, Organisation = OrganisationEntry.Text });
+            sQLiteConnection.Insert(new Organizer { Name = NameEntry.Text, Organisation = OrganisationEntry.Text, Password = PasswordEntry.Text });
             Application.Current.Properties["Name"] = NameEntry.Text;
             Application.Current.Properties["Organisation"] = OrganisationEntry.Text;
+            Application.Current.Properties["Password"] = PasswordEntry.Text;
             DisplayAlert("", "Registration Succesful!", "OK");
             Xamarin.Essentials.Vibration.Vibrate(2000);
             Navigation.PushAsync(new OrganizerLoginPage());
