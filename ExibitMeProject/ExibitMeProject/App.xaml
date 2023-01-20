@@ -13,6 +13,11 @@
                 <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryBackgroundColor}" />
                 <Setter Property="BarTextColor" Value="{StaticResource PrimaryTextColor}" />
             </Style>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}"/>
+                <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}"/>
+                <Setter Property="BorderColor" Value="{StaticResource PrimaryColor}"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

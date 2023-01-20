@@ -105,6 +105,7 @@
                         BackgroundColor="{StaticResource PrimaryBackgroundColor}"
                         Margin="10,0,10,0"
                         Clicked="RegisterButton_Clicked"/>
+                
             </Grid>
         </StackLayout>
     </ContentPage.Content>
