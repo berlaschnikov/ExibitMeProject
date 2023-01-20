@@ -25,39 +25,53 @@ namespace ExibitMeProject
             Navigation.PushAsync(new RushPage());
         }
 
-            public static void Main(string[] args)
-            {
-                var data = new[]
-                {
-                new { Date = new DateTime(2022, 1, 1), Value = 5 },
-                new { Date = new DateTime(2022, 1, 2), Value = 6 },
-                new { Date = new DateTime(2022, 2, 1), Value = 7 },
-                new { Date = new DateTime(2022, 2, 2), Value = 8 },
-                new { Date = new DateTime(2022, 3, 1), Value = 9 },
-                new { Date = new DateTime(2022, 3, 2), Value = 10 },
-            };  
-
-                // Filter by month
-                var januaryData = data.Where(x => x.Date.Month == 1);
-                Console.WriteLine("Data for January: " + string.Join(", ", januaryData.Select(x => x.Value)));
-
-                // Filter by week
-                var firstWeekData = data.Where(x => CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(x.Date, CalendarWeekRule.FirstDay, DayOfWeek.Sunday) == 1);
-                Console.WriteLine("Data for first week: " + string.Join(", ", firstWeekData.Select(x => x.Value)));
-
-                // Filter by day
-                var sundayData = data.Where(x => x.Date.DayOfWeek == DayOfWeek.Sunday);
-                Console.WriteLine("Data for Sundays: " + string.Join(", ", sundayData.Select(x => x.Value)));
-            }
-
-        private void OnFilterChanged(object sender, EventArgs e)
+        public static void Main(string[] args)
         {
-            // Add your code here to handle the event when the picker's selected index changes
-            var picker = sender as Picker;
-            var selectedItem = picker.SelectedItem as string;
-            // Do something with the selected item
-        }
-    }
+            var data = new[]
+            {
+            new { Date = new DateTime(2022, 1, 1), Value = 5 },
+            new { Date = new DateTime(2022, 1, 2), Value = 6 },
+            new { Date = new DateTime(2022, 2, 1), Value = 7 },
+            new { Date = new DateTime(2022, 2, 2), Value = 8 },
+            new { Date = new DateTime(2022, 3, 1), Value = 9 },
+            new { Date = new DateTime(2022, 3, 2), Value = 10 },
+        };
 
+            var morningData = data.Where(x => x.Date.Hour >= 6 && x.Date.Hour < 12);
+            Console.WriteLine("Data for morning: " + string.Join(", ", morningData.Select(x => x.Value)));
+
+            var afternoonData = data.Where(x => x.Date.Hour >= 12 && x.Date.Hour < 18);
+            Console.WriteLine("Data for afternoon: " + string.Join(", ", afternoonData.Select(x => x.Value)));
+
+            var eveningData = data.Where(x => x.Date.Hour >= 18 && x.Date.Hour < 24);
+            Console.WriteLine("Data for evening: " + string.Join(", ", eveningData.Select(x => x.Value)));
+
+            var specificHourData = data.Where(x => x.Date.Hour == 14);
+            Console.WriteLine("Data for 14:00: " + string.Join(", ", specificHourData.Select(x => x.Value)));
+
+            var specificDayData = data.Where(x => x.Date.DayOfWeek == DayOfWeek.Wednesday);
+            Console.WriteLine("Data for Wednesday: " + string.Join(", ", specificDayData.Select(x => x.Value)));
+        }
+
+        public void OnFilterChanged(object sender, EventArgs e)
+        {
+            var picker = sender as Picker;
+            int selectedIndex = picker.SelectedIndex;
+
+            switch (selectedIndex)
+            {
+                case 0:
+                    // code to filter data by hour
+                    break;
+                case 1:
+                    // code to filter data by day
+                    break;
+            }
+        }
+
+    }
 }
+
+  
+
 

@@ -4,13 +4,12 @@
              x:Class="ExibitMeProject.OrganizerMainPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Select a filter option:"
+            VerticalOptions="CenterAndExpand" 
+            HorizontalOptions="CenterAndExpand" />
             <Picker x:Name="FilterPicker" SelectedIndexChanged="OnFilterChanged">
                 <Picker.Items>
-                    <x:String>Month</x:String>
-                    <x:String>Week</x:String>
+                    <x:String>Hour</x:String>
                     <x:String>Day</x:String>
                 </Picker.Items>
             </Picker>
