@@ -18,12 +18,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Views\Organizer\**" />
-    <EmbeddedResource Remove="Views\Organizer\**" />
-    <None Remove="Views\Organizer\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="QRCoder" Version="1.4.3" />
     <PackageReference Include="sqlite-net-pcl" Version="1.9.141-beta" />
@@ -74,6 +68,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ViewReviewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Organizer\CreateExpoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Standholder\LeadsPage.xaml">

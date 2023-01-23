@@ -27,35 +27,10 @@ namespace ExibitMeProject
         private void ConvertButton_Clicked(object sender, EventArgs e)
         {
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
-            string eccString = ECCLevelPicker.Items[ECCLevelPicker.SelectedIndex];
-            if (eccString == "L")
-            {
-                QRCodeData qrCodeData = qrGenerator.CreateQrCode(VisitorString, QRCodeGenerator.ECCLevel.L);
-                PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
-                byte[] qrCodeBytes = qRCode.GetGraphic(20);
-                QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
-            }
-            else if (eccString == "M")
-            {
-                QRCodeData qrCodeData = qrGenerator.CreateQrCode(VisitorString, QRCodeGenerator.ECCLevel.M);
-                PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
-                byte[] qrCodeBytes = qRCode.GetGraphic(20);
-                QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
-            }
-            else if (eccString == "Q")
-            {
-                QRCodeData qrCodeData = qrGenerator.CreateQrCode(VisitorString, QRCodeGenerator.ECCLevel.Q);
-                PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
-                byte[] qrCodeBytes = qRCode.GetGraphic(20);
-                QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
-            }
-            else if (eccString == "H")
-            {
-                QRCodeData qrCodeData = qrGenerator.CreateQrCode(VisitorString, QRCodeGenerator.ECCLevel.H);
-                PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
-                byte[] qrCodeBytes = qRCode.GetGraphic(20);
-                QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
-            }
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(VisitorString, QRCodeGenerator.ECCLevel.Q);
+            PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
+            byte[] qrCodeBytes = qRCode.GetGraphic(100);
+            QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
         }
     }
 }
