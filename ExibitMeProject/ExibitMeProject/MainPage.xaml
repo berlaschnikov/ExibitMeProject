@@ -8,5 +8,6 @@
             <Label Text="Main Page" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
     </StackLayout>
+    
 
 </ContentPage>
