@@ -34,7 +34,7 @@ namespace ExibitMeProject.Views.Standholder
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(QuestionString, QRCodeGenerator.ECCLevel.Q);
             PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
-            byte[] qrCodeBytes = qRCode.GetGraphic(50);
+            byte[] qrCodeBytes = qRCode.GetGraphic(100);
             QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
             //if (eccString == "L")
             //{
