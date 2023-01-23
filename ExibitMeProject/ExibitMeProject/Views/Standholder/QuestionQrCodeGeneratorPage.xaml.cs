@@ -19,41 +19,51 @@ namespace ExibitMeProject.Views.Standholder
         public QuestionQrCodeGeneratorPage()
         {
             InitializeComponent();
-            QuestionString = "" + QuestionEntry1 + "," + QuestionEntry2 + "," + QuestionEntry3;
+            string Q1String = QuestionEntry1.Text;
+            string Q2String = QuestionEntry2.Text;
+            string Q3String = QuestionEntry3.Text;
+            QuestionString = "" + Q1String + ";" + Q2String + ";" + Q3String + "";
         }
 
         private void GenerateQrCodeButton_Clicked(object sender, EventArgs e)
         {
+            string Q1String = QuestionEntry1.Text;
+            string Q2String = QuestionEntry2.Text;
+            string Q3String = QuestionEntry3.Text;
+            QuestionString = "" + Q1String + ";" + Q2String + ";" + Q3String + "";
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
-            string eccString = ECCLevelPicker.Items[ECCLevelPicker.SelectedIndex];
-            if (eccString == "L")
-            {
-                QRCodeData qrCodeData = qrGenerator.CreateQrCode(QuestionString, QRCodeGenerator.ECCLevel.L);
-                PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
-                byte[] qrCodeBytes = qRCode.GetGraphic(20);
-                QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
-            }
-            else if (eccString == "M")
-            {
-                QRCodeData qrCodeData = qrGenerator.CreateQrCode(QuestionString, QRCodeGenerator.ECCLevel.M);
-                PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
-                byte[] qrCodeBytes = qRCode.GetGraphic(20);
-                QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
-            }
-            else if (eccString == "Q")
-            {
-                QRCodeData qrCodeData = qrGenerator.CreateQrCode(QuestionString, QRCodeGenerator.ECCLevel.Q);
-                PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
-                byte[] qrCodeBytes = qRCode.GetGraphic(20);
-                QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
-            }
-            else if (eccString == "H")
-            {
-                QRCodeData qrCodeData = qrGenerator.CreateQrCode(QuestionString, QRCodeGenerator.ECCLevel.H);
-                PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
-                byte[] qrCodeBytes = qRCode.GetGraphic(20);
-                QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
-            }
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(QuestionString, QRCodeGenerator.ECCLevel.Q);
+            PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
+            byte[] qrCodeBytes = qRCode.GetGraphic(50);
+            QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
+            //if (eccString == "L")
+            //{
+            //    QRCodeData qrCodeData = qrGenerator.CreateQrCode(QuestionString, QRCodeGenerator.ECCLevel.L);
+            //    PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
+            //    byte[] qrCodeBytes = qRCode.GetGraphic(20);
+            //    QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
+            //}
+            //else if (eccString == "M")
+            //{
+            //    QRCodeData qrCodeData = qrGenerator.CreateQrCode(QuestionString, QRCodeGenerator.ECCLevel.M);
+            //    PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
+            //    byte[] qrCodeBytes = qRCode.GetGraphic(20);
+            //    QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
+            //}
+            //else if (eccString == "Q")
+            //{
+            //    QRCodeData qrCodeData = qrGenerator.CreateQrCode(QuestionString, QRCodeGenerator.ECCLevel.Q);
+            //    PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
+            //    byte[] qrCodeBytes = qRCode.GetGraphic(50);
+            //    QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
+            //}
+            //else if (eccString == "H")
+            //{
+            //    QRCodeData qrCodeData = qrGenerator.CreateQrCode(QuestionString, QRCodeGenerator.ECCLevel.H);
+            //    PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
+            //    byte[] qrCodeBytes = qRCode.GetGraphic(20);
+            //    QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
+            //}
         }
     }
 }

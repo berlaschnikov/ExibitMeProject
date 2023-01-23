@@ -42,13 +42,13 @@ namespace ExibitMeProject
             {
                 App.CurrentAppVisitor = visitor;
                 DisplayAlert("Login Succesful!", "Welcome " + visitor.EmailAddress + "!", "OK");
-                Xamarin.Essentials.Vibration.Vibrate(2000);
+                Xamarin.Essentials.Vibration.Vibrate(500);
                 Navigation.PushAsync(new VisitorMainPage());
             }
             else
             {
                 DisplayAlert("", "Login Failed!", "OK");
-                Xamarin.Essentials.Vibration.Vibrate(2000);
+                Xamarin.Essentials.Vibration.Vibrate(500);
                 return;
             }            
         }

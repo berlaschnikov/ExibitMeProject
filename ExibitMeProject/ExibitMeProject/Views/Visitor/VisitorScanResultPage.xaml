@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExibitMeProject.Views.Visitor.VisitorScanResultPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="1st Question:"/>
+                <Entry x:Name="QuestionEntry1"
+                IsReadOnly="True"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Your Answer:"/>
+                <Entry x:Name="AnswerEntry1"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="2nd Question:"/>
+                <Entry x:Name="QuestionEntry2"
+                IsReadOnly="True"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Your Answer:"/>
+                <Entry x:Name="AnswerEntry2"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="3rd Question:"/>
+                <Entry x:Name="QuestionEntry3"
+                IsReadOnly="True"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Your Answer:"/>
+                <Entry x:Name="AnswerEntry3"/>
+            </StackLayout>
+        </StackLayout>        
+    </ContentPage.Content>
+</ContentPage>

@@ -21,7 +21,9 @@
             <Button x:Name="GenerateQrCodeButton"
                     Text="Generate Qr-Code"
                     Clicked="GenerateQrCodeButton_Clicked"/>
-            <Image x:Name="QrCodeImage"/>
+            <Image x:Name="QrCodeImage"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

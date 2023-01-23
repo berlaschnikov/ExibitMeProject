@@ -17,6 +17,7 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackgroundColor}"/>
                 <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}"/>
                 <Setter Property="BorderColor" Value="{StaticResource PrimaryColor}"/>
+                <Setter Property="CornerRadius" Value="10"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

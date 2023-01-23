@@ -34,12 +34,12 @@ namespace ExibitMeProject
             if (insertedRows > 0)
             {
                 _ = DisplayAlert("Gelukt", "Registratie gelukt", "Ok");
-                Xamarin.Essentials.Vibration.Vibrate(2000);
+                Xamarin.Essentials.Vibration.Vibrate(500);
             }
             else
             {
                 _ = DisplayAlert("Niet Gelukt", "Registratie mislukt", "Ok");
-                Xamarin.Essentials.Vibration.Vibrate(2000);
+                Xamarin.Essentials.Vibration.Vibrate(500);
             }
 
             Navigation.PopAsync();

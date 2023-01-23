@@ -27,12 +27,12 @@ namespace ExibitMeProject
             if (isUsernameEmpty)
             {
                 UsernameEntry.Placeholder = "This can not be empty!";
-                Xamarin.Essentials.Vibration.Vibrate(2000);
+                Xamarin.Essentials.Vibration.Vibrate(500);
             }
             else if (isPasswordEmpty)
             {
                 PasswordEntry.Placeholder = "This can not be empty";
-                Xamarin.Essentials.Vibration.Vibrate(2000);
+                Xamarin.Essentials.Vibration.Vibrate(500);
             }
             else
             {

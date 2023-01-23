@@ -32,13 +32,13 @@ namespace ExibitMeProject
             {
                 App.CurrentAppStandholder = standholder;
                 DisplayAlert("Login Succesful!", "Welcome " + standholder.Name + "!", "OK");
-                Xamarin.Essentials.Vibration.Vibrate(2000);
+                Xamarin.Essentials.Vibration.Vibrate(500);
                 Navigation.PushAsync(new StandholderMainPage());
             }
             else
             {
                 DisplayAlert("", "Login Failed!", "OK");
-                Xamarin.Essentials.Vibration.Vibrate(2000);
+                Xamarin.Essentials.Vibration.Vibrate(500);
                 return;
             }            
         }

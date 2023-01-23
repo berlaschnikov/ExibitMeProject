@@ -32,13 +32,13 @@ namespace ExibitMeProject
             {
                 App.CurrentAppOrganizer = organizer;
                 DisplayAlert("Login Succesful!", "Welcome " + organizer.Name + "!", "OK");
-                Xamarin.Essentials.Vibration.Vibrate(2000);
+                Xamarin.Essentials.Vibration.Vibrate(500);
                 Navigation.PushAsync(new OrganizerMainPage());
             }
             else
             {
                 DisplayAlert("", "Login Failed!", "OK");
-                Xamarin.Essentials.Vibration.Vibrate(2000);
+                Xamarin.Essentials.Vibration.Vibrate(500);
                 return;
             }
             

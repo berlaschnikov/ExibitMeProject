@@ -79,7 +79,7 @@
     <EmbeddedResource Update="Views\Standholder\QuestionQrCodeGeneratorPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Visitor\VisitorQrCodeScannerPage.xaml">
+    <EmbeddedResource Update="Views\Visitor\VisitorScanResultPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="VIewTurnoverPage.xaml">
