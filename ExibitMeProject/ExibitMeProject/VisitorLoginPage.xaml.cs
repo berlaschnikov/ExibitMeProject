@@ -34,7 +34,7 @@ namespace ExibitMeProject
             //Visitor = visitor;
         }
 
-        private void LoginButton_Clicked(object sender, EventArgs e)
+        private async void LoginButton_Clicked(object sender, EventArgs e)
         {
             SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation);
             var visitor = sQLiteConnection.Table<Visitor>().Where(visitor => visitor.EmailAddress == EmailEntry.Text && visitor.Password == PasswordEntry.Text).FirstOrDefault();
@@ -43,14 +43,17 @@ namespace ExibitMeProject
                 App.CurrentAppVisitor = visitor;
                 DisplayAlert("Login Succesful!", "Welcome " + visitor.EmailAddress + "!", "OK");
                 Xamarin.Essentials.Vibration.Vibrate(500);
-                Navigation.PushAsync(new VisitorMainPage());
+                var loadingPage = new JokePage();
+                await Navigation.PushAsync(loadingPage);
+                await Task.Delay(7000);
+                await Navigation.PushAsync(new VisitorMainPage());
             }
             else
             {
                 DisplayAlert("", "Login Failed!", "OK");
                 Xamarin.Essentials.Vibration.Vibrate(500);
                 return;
-            }            
+            }
         }
 
         private void RegisterButton_Clicked(object sender, EventArgs e)
