@@ -12,5 +12,6 @@ namespace ExibitMeProject.Models
         public string Name { get; set; }
         public string Company { get; set; }
         public string Password { get; set; }
+        public List<Visitor> Leads { get; set; }
     }
 }

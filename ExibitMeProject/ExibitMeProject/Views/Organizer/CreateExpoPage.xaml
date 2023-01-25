@@ -4,9 +4,15 @@
              x:Class="ExibitMeProject.Views.Organizer.CreateExpoPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Create Exhibition"/>
+            <Label Text="Name:"/>
+            <Entry x:Name="NameEntry"/>
+            <Label Text="Location:"/>
+            <Entry x:Name="LocationEntry"/>
+            <Label Text="Date:"/>
+            <Entry x:Name="DateEntry"/>
+            <Button x:Name="CreateButton"
+                    Clicked="CreateButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
