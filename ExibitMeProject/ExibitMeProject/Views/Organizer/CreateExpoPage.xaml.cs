@@ -21,10 +21,13 @@ namespace ExibitMeProject.Views.Organizer
 
         private async void CreateButton_Clicked(object sender, EventArgs e)
         {
-            Expo expo = new Expo();
-            expo.Name = NameEntry.Text;
-            expo.Location = LocationEntry.Text;
-            expo.Date = DateEntry.Text;
+            Expo expo = new()
+            {
+                Name = NameEntry.Text,
+                Location = LocationEntry.Text,
+                Date = DateEntry.Text,
+                Organizer = App.CurrentAppOrganizer
+            };
 
             SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation);
             sQLiteConnection.CreateTable<Expo>();
@@ -33,11 +36,11 @@ namespace ExibitMeProject.Views.Organizer
 
             if (insertedRows > 0)
             {
-                DisplayAlert("Success", "Expo created successfully", "Ok");
+                await DisplayAlert("Success", "Expo created successfully", "Ok");
             }
             else
             {
-                DisplayAlert("Failure", "Expo failed to be created", "Ok");
+                await DisplayAlert("Failure", "Expo failed to be created", "Ok");
             }
             await Navigation.PopAsync();
         }

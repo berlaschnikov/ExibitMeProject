@@ -9,12 +9,20 @@ using System.Globalization;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ExibitMeProject.Models;
 
 namespace ExibitMeProject
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class OrganizerMainPage : ContentPage
     {
+        public Expo CurrentExpo { get; set; }
+        public OrganizerMainPage(Expo selectedExpo)
+        {
+            CurrentExpo = selectedExpo;
+            InitializeComponent();
+        }
+
         public OrganizerMainPage()
         {
             InitializeComponent();

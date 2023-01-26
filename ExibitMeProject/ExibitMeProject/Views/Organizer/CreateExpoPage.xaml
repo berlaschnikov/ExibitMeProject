@@ -12,6 +12,7 @@
             <Label Text="Date:"/>
             <Entry x:Name="DateEntry"/>
             <Button x:Name="CreateButton"
+                    Text="Create"
                     Clicked="CreateButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

@@ -17,6 +17,7 @@
             <Button x:Name="ViewRushButton"
                     Text="View Rush"
                     Clicked="ViewRushButton_Clicked"/>
+            
         </StackLayout>
     </ContentPage.Content>
     <ContentPage.Resources>

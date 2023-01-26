@@ -35,8 +35,8 @@ namespace ExibitMeProject
 			}
 			catch (Exception ex)
 			{
-
-				throw;
+                await DisplayAlert("Error", ex.Message, "Ok");
+                throw;
 			}
 		}
     }

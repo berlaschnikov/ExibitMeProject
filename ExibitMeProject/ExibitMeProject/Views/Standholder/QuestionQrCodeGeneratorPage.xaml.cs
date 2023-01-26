@@ -1,7 +1,6 @@
 ﻿using QRCoder;
 using System;
 using System.Collections.Generic;
-using QRCoder;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -31,9 +30,9 @@ namespace ExibitMeProject.Views.Standholder
             string Q2String = QuestionEntry2.Text;
             string Q3String = QuestionEntry3.Text;
             QuestionString = "" + Q1String + ";" + Q2String + ";" + Q3String + "";
-            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeGenerator qrGenerator = new();
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(QuestionString, QRCodeGenerator.ECCLevel.Q);
-            PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
+            PngByteQRCode qRCode = new(qrCodeData);
             byte[] qrCodeBytes = qRCode.GetGraphic(100);
             QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
             //if (eccString == "L")

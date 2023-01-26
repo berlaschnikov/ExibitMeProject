@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExibitMeProject.Views.Organizer.EditExpoPage">
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding Expo}">
+            <Label Text="Edit Expo"/>
+            <Label Text="Name:"/>
+            <Entry x:Name="NameEntry"
+                   BindingContext="{Binding Name}"/>
+            <Label Text="Location:"/>
+            <Entry x:Name="LocationEntry"
+                   BindingContext="{Binding Location}"/>
+            <Label Text="Date:"/>
+            <Entry x:Name="DateEntry"
+                   BindingContext="{Binding Date}"/>
+            <Button x:Name="EditButton"
+                    Text="Edit"
+                    Clicked="EditButton_Clicked"/>
+            <Button x:Name="DeleteButton"
+                    Text="Delete"
+                    Clicked="DeleteButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

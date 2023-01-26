@@ -46,6 +46,7 @@ namespace ExibitMeProject
                         }
                         catch (Exception ex)
                         {
+                            await DisplayAlert("Error", ex.Message, "Ok");
                             // An unexpected error occured. No browser may be installed on the device.
                         }
                     }
@@ -57,7 +58,7 @@ namespace ExibitMeProject
             }
             catch (Exception ex)
             {
-
+                await DisplayAlert("Error", ex.Message, "Ok");
                 throw;
             }
         }

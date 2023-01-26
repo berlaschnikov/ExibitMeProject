@@ -29,6 +29,46 @@ namespace ExibitMeProject.Models
         public string Phone { get; set; }
         [MaxLength(200)]
         public string Occupation { get; set; }
+        public Standholder Standholder { get; set; }
         
+        public Visitor(int id, string fullName, string emailAddress, string password, string street, string postalCode, string city, string state, string country, string phone, string occupation, Standholder standholder)
+        {
+            Id = id;
+            FullName = fullName;
+            EmailAddress = emailAddress;
+            Password = password;
+            Street = street;
+            PostalCode = postalCode;
+            City = city;
+            State = state;
+            Country = country;
+            Phone = phone;
+            Occupation = occupation;
+            Standholder = standholder;
+        }
+
+        public Visitor(string fullName, string emailAddress, string password, string street, string postalCode, string city, string state, string country, string phone, string occupation, Standholder standholder)
+        {
+            FullName = fullName;
+            EmailAddress = emailAddress;
+            Password = password;
+            Street = street;
+            PostalCode = postalCode;
+            City = city;
+            State = state;
+            Country = country;
+            Phone = phone;
+            Occupation = occupation;
+            Standholder = standholder;
+        }
+
+        public Visitor()
+        {
+        }
+
+        public void AddStandholder(Standholder standholder)
+        {
+            Standholder = standholder;
+        }
     }
 }
