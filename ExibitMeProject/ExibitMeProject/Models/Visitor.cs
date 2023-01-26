@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -29,9 +30,8 @@ namespace ExibitMeProject.Models
         public string Phone { get; set; }
         [MaxLength(200)]
         public string Occupation { get; set; }
-        public Standholder Standholder { get; set; }
         
-        public Visitor(int id, string fullName, string emailAddress, string password, string street, string postalCode, string city, string state, string country, string phone, string occupation, Standholder standholder)
+        public Visitor(int id, string fullName, string emailAddress, string password, string street, string postalCode, string city, string state, string country, string phone, string occupation)
         {
             Id = id;
             FullName = fullName;
@@ -44,10 +44,9 @@ namespace ExibitMeProject.Models
             Country = country;
             Phone = phone;
             Occupation = occupation;
-            Standholder = standholder;
         }
 
-        public Visitor(string fullName, string emailAddress, string password, string street, string postalCode, string city, string state, string country, string phone, string occupation, Standholder standholder)
+        public Visitor(string fullName, string emailAddress, string password, string street, string postalCode, string city, string state, string country, string phone, string occupation)
         {
             FullName = fullName;
             EmailAddress = emailAddress;
@@ -59,16 +58,11 @@ namespace ExibitMeProject.Models
             Country = country;
             Phone = phone;
             Occupation = occupation;
-            Standholder = standholder;
         }
 
         public Visitor()
         {
-        }
-
-        public void AddStandholder(Standholder standholder)
-        {
-            Standholder = standholder;
-        }
+            
+        }        
     }
 }

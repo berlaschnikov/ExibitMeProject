@@ -7,7 +7,7 @@ using SQLiteNetExtensions.Attributes;
 
 namespace ExibitMeProject.Models
 {
-    [Serializable]
+    //[Serializable]
     public class Organizer
     {
         [PrimaryKey, AutoIncrement]

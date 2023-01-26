@@ -1,15 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ExibitMeProject.Views.Organizer.ChooseExpoPage">
+             x:Class="ExibitMeProject.Views.Organizer.ChooseExpoPage"
+             Title="Choose Exhibit">    
     <ContentPage.Content>
         <StackLayout>
             
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Choose an exhibition to view:" />
+            <StackLayout HorizontalOptions="Center">
+                <Label Text="Choose an Exhibit to view" 
+                       VerticalTextAlignment="Center"
+                       FontSize="16"/>
             </StackLayout>
             
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal"
+                         Margin="10">
                 <ListView x:Name="ExhibitionList" 
                           ItemsSource="{Binding Expo}"
                           ItemSelected="ExhibitionList_ItemSelected">
@@ -31,10 +35,11 @@
             </StackLayout>
             
             <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="CenterAndExpand"
-                         VerticalOptions="EndAndExpand">
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="EndAndExpand"
+                         Margin="10">
                 <Button x:Name="AddExpo"
-                        HorizontalOptions="CenterAndExpand"
+                        HorizontalOptions="FillAndExpand"
                         Text="Add new exhibition"  
                         Clicked="AddExpo_Clicked"/>
             </StackLayout>

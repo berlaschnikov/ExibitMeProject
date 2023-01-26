@@ -1,23 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ExibitMeProject.VisitorMainPage">
+             xmlns:local="clr-namespace:MyApp"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             x:Class="ExibitMeProject.VisitorMainPage"
+             Title="Visitor">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Image/>
-            <Button x:Name="ScanQrCodeButton"
+
+            <StackLayout>
+                <Frame BackgroundColor="Black">
+                    <Label HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Welcome to ExhibitMe for Visitors" FontSize="16" FontAttributes="Bold"/>
+                                <Span Text="{x:Static system:Environment.NewLine}"/>
+                                <Span Text="{x:Static system:Environment.NewLine}"/>
+                                <Span Text="Scan Qr Codes to answer questions or get infromation about a stand"/>
+                                <Span Text="{x:Static system:Environment.NewLine}"/>
+                                <Span Text="Generate Qr Codes to share your information with a stand"/>
+                                <Span Text="{x:Static system:Environment.NewLine}"/>
+                                <Span Text="View the history of scanned items"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Margin="10"
+                         VerticalOptions="FillAndExpand">
+                <Button x:Name="ScanQrCodeButton"
                     Text="Scan QrCode"
-                    Clicked="ScanQrCodeButton_Clicked"/>
-            <Button x:Name="GenerateQrCodeFullButton"
+                    Clicked="ScanQrCodeButton_Clicked"
+                        VerticalOptions="FillAndExpand"
+                        FontSize="24"/>
+
+                <Button x:Name="GenerateQrCodeFullButton"
                     Text="Generate QrCode Full"
-                    Clicked="GenerateQrCodeFullButton_Clicked"/>
-            <Button x:Name="HistoryButton"
+                    Clicked="GenerateQrCodeFullButton_Clicked"
+                        VerticalOptions="FillAndExpand"
+                        FontSize="24"/>
+
+                <Button x:Name="HistoryButton"
                     Text="Visited Stands" 
-                    Clicked="HistoryButton_Clicked"/>
-            
+                    Clicked="HistoryButton_Clicked"
+                        VerticalOptions="FillAndExpand"
+                        FontSize="24"/>
+            </StackLayout>
             
         </StackLayout>
     </ContentPage.Content>

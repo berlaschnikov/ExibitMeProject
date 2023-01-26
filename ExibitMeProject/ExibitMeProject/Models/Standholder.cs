@@ -14,6 +14,7 @@ namespace ExibitMeProject.Models
         public string Name { get; set; }
         public string Company { get; set; }
         public string Password { get; set; }
+        [TextBlob("ExpoBlobbed")]
         public Expo Expo { get; set; }
         [TextBlob("LeadsBlobbed")]
         public List<Visitor> Leads { get; set; }
