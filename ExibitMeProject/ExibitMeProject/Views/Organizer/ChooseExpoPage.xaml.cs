@@ -54,5 +54,10 @@ namespace ExibitMeProject.Views.Organizer
             var viewCell = (ViewCell)sender;
             selectedExpo = (Expo)viewCell.BindingContext;
         }
+
+        private void CloseButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

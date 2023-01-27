@@ -19,14 +19,16 @@
                           ItemSelected="ExhibitionList_ItemSelected">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell Tapped="ViewCell_Tapped">
-                                <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding Name}" />
-                                    <Button x:Name="EditExpoPage"
+                            <ViewCell Tapped="ViewCell_Tapped">                                
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Name}" />
+                                        <Button x:Name="EditExpoPage"
                                             Text="Edit"
                                             CommandParameter="{Binding .}"
                                             Clicked="EditExpoPage_Clicked"
-                                            HorizontalOptions="EndAndExpand"/>
+                                            HorizontalOptions="EndAndExpand"/>                                        
+                                    </StackLayout>                                    
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

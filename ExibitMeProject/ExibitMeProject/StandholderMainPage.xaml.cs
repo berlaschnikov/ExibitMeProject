@@ -40,7 +40,7 @@ namespace ExibitMeProject
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new QuestionQrCodeGeneratorPage());
+            Navigation.PushAsync(new ChooseGenPage());
         }
 
         private void Button_Clicked_1(object sender, EventArgs e)

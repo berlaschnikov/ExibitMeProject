@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExibitMeProject.Views.Standholder.ChooseGenPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Frame BackgroundColor="Black">
+                    <Label Text=""/>
+                </Frame>
+            </StackLayout>
+            <StackLayout>
+                <Button x:Name="InfoButton"
+                    Text="Info"
+                    Clicked="InfoButton_Clicked"/>
+                <Button x:Name="QuestionButton"
+                    Text="Question"
+                    Clicked="QuestionButton_Clicked"/>
+                <Button x:Name="UrlButton"
+                    Text="Url"
+                    Clicked="UrlButton_Clicked"/>
+            </StackLayout>
+        </StackLayout>        
+    </ContentPage.Content>
+</ContentPage>

@@ -52,6 +52,8 @@ namespace ExibitMeProject
                     }
                     else
                     {
+                        var currentVisitor = App.CurrentAppVisitor;
+                        currentVisitor.AddUrlHistory(result);
                         await Navigation.PushAsync(new Views.Visitor.VisitorScanResultPage(result));
                     }
                 }

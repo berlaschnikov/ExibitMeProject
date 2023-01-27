@@ -8,10 +8,10 @@
             <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}">
                 <StackLayout>
                     <Label x:Name="TitleLabel"
-                                Text="Welcome to ExhibitMe for Standholder!"
+                                Text="Welcome to ExhibitMe for Standholders"
                                 TextColor="{StaticResource PrimaryTextColor}"
                                 HorizontalTextAlignment="Center"
-                                FontSize="30"
+                                FontSize="28"
                                 HorizontalOptions="CenterAndExpand"/>
                 </StackLayout>
             </Frame>

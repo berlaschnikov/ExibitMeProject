@@ -12,6 +12,9 @@ namespace ExibitMeProject
         public static Standholder CurrentAppStandholder;
         public static Visitor CurrentAppVisitor;
         public static Expo CurrentAppExpo;
+        public static Info CurrentAppInfo;
+        public static Question CurrentAppQuestion;
+        public static Url CurrentAppUrl;
         public App()
         {
             InitializeComponent();

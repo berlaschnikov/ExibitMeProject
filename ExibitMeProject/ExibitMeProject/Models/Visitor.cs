@@ -2,6 +2,7 @@
 using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ExibitMeProject.Models
@@ -30,7 +31,13 @@ namespace ExibitMeProject.Models
         public string Phone { get; set; }
         [MaxLength(200)]
         public string Occupation { get; set; }
-        
+        [TextBlob("HistoryBlobbed")]
+        public List<Info> InfoHistory { get; set; }
+        [TextBlob("HistoryBlobbed")]
+        public List<Question> QuestionHistory { get; set; }
+        [TextBlob("HistoryBlobbed")]
+        public List<Url> UrlHistory { get; set; }
+
         public Visitor(int id, string fullName, string emailAddress, string password, string street, string postalCode, string city, string state, string country, string phone, string occupation)
         {
             Id = id;
@@ -63,6 +70,19 @@ namespace ExibitMeProject.Models
         public Visitor()
         {
             
-        }        
+        } 
+        
+        public void AddInfoHistory(object passedHistory)
+        {
+            InfoHistory.Append(passedHistory);
+        }
+        public void AddQuestionHistory(object passedHistory)
+        {
+            QuestionHistory.Append(passedHistory);
+        }
+        public void AddUrlHistory(object passedHistory)
+        {
+            UrlHistory.Append(passedHistory);
+        }
     }
 }
