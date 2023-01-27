@@ -4,23 +4,39 @@
              x:Class="ExibitMeProject.Views.Organizer.EditExpoPage"
              Title="Edit Exhibit">
     <ContentPage.Content>
-        <StackLayout BindingContext="{Binding Expo}">
-            <Label Text="Edit Expo"/>
-            <Label Text="Name:"/>
-            <Entry x:Name="NameEntry"
+        <StackLayout>
+            <StackLayout BindingContext="{Binding Expo}"
+                         Margin="10">
+                <Label Text="Edit Expo"
+                       FontSize="21"/>
+                <Label Text="Name:"
+                       FontSize="21"/>
+                <Entry x:Name="NameEntry"
+                       FontSize="21"
                    BindingContext="{Binding Name}"/>
-            <Label Text="Location:"/>
-            <Entry x:Name="LocationEntry"
+                <Label Text="Location:"
+                       FontSize="21"/>
+                <Entry x:Name="LocationEntry"
+                       FontSize="21"
                    BindingContext="{Binding Location}"/>
-            <Label Text="Date:"/>
-            <Entry x:Name="DateEntry"
+                <Label Text="Date:"
+                       FontSize="21"/>
+                <Entry x:Name="DateEntry"
+                       FontSize="21"
                    BindingContext="{Binding Date}"/>
-            <Button x:Name="EditButton"
+            </StackLayout>
+            
+            <StackLayout Margin="10"
+                         VerticalOptions="FillAndExpand">
+                <Button x:Name="EditButton"
                     Text="Edit"
+                        VerticalOptions="FillAndExpand"
                     Clicked="EditButton_Clicked"/>
-            <Button x:Name="DeleteButton"
+                <Button x:Name="DeleteButton"
                     Text="Delete"
+                        VerticalOptions="FillAndExpand"
                     Clicked="DeleteButton_Clicked"/>
+            </StackLayout>            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -4,10 +4,12 @@
              x:Class="ExibitMeProject.QrCodeGeneratorPage">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="InputText"/>
             <Image x:Name="QrCodeImage"/>
             <Button x:Name="ConvertButton"
-                    Text="Convert"
+                    Text="Refresh"
+                    FontSize="21"
+                    Margin="10"
+                    VerticalOptions="FillAndExpand"
                     Clicked="ConvertButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

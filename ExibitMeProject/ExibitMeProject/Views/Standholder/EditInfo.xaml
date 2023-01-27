@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExibitMeProject.Views.Standholder.EditInfo"
+             Title="Edit">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Frame BackgroundColor="Black">
+                    <Label Text="Edit or delete your info here!"
+                           FontSize="32"
+                           HorizontalTextAlignment="Center"/>
+                </Frame>                
+            </StackLayout>
+            
+            <StackLayout Margin="10">
+                <Label Text="Name:"
+                       FontSize="21"/>
+                <Entry x:Name="NameEntry"
+                       FontSize="21"/>
+                <Label Text="Info Body:"
+                       FontSize="21"/>
+                <Entry x:Name="InfoBodyEntry"
+                       FontSize="21"/>
+            </StackLayout>
+            
+            <StackLayout VerticalOptions="FillAndExpand"
+                         Margin="10">
+                <Button x:Name="EditInfoButton" 
+                    Text="Edit Info"
+                        FontSize="32"
+                    VerticalOptions="FillAndExpand"
+                    Clicked="EditInfoButton_Clicked"/>
+                <Button x:Name="DeleteInfoButton"
+                    Text="Delete Info"
+                        FontSize="32"
+                    VerticalOptions="FillAndExpand"
+                    Clicked="DeleteInfoButton_Clicked"/>
+            </StackLayout>            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

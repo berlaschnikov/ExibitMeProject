@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,11 +34,6 @@ namespace ExibitMeProject.Views.Standholder
             }
         }
 
-        private void QuestionListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-
-        }
-
         private void GenQrButton_Clicked(object sender, EventArgs e)
         {
             var button = (Button)sender;
@@ -63,7 +59,11 @@ namespace ExibitMeProject.Views.Standholder
 
         private void UrlListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            var selectedUrl = UrlListView.SelectedItem as Url;
+            if (selectedUrl != null)
+            {
+                Navigation.PushAsync(new EditUrl(selectedUrl));
+            }
         }
     }
 }

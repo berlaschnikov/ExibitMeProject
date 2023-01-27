@@ -56,7 +56,11 @@ namespace ExibitMeProject.Views.Standholder
 
         private void QuestionListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            var selectedQuestion = QuestionListView.SelectedItem as Question;
+            if (selectedQuestion != null)
+            {
+                Navigation.PushAsync(new EditQuestion(selectedQuestion));
+            }
         }
     }
 }

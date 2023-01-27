@@ -41,7 +41,11 @@ namespace ExibitMeProject.Views.Standholder
 
         private void InfoListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-
+            var selectedInfo = InfoListView.SelectedItem as Info;
+            if (selectedInfo != null)
+            {
+                Navigation.PushAsync(new EditInfo(selectedInfo));
+            }
         }
         
         private void GenQrButton_Clicked(object sender, EventArgs e)

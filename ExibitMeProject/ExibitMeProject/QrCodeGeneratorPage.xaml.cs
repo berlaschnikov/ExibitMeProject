@@ -24,13 +24,19 @@ namespace ExibitMeProject
             VisitorString = JsonConvert.SerializeObject(App.CurrentAppVisitor);
         }
 
-        private void ConvertButton_Clicked(object sender, EventArgs e)
+        protected override void OnAppearing()
         {
+            base.OnAppearing();
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(VisitorString, QRCodeGenerator.ECCLevel.Q);
             PngByteQRCode qRCode = new PngByteQRCode(qrCodeData);
-            byte[] qrCodeBytes = qRCode.GetGraphic(100);
+            byte[] qrCodeBytes = qRCode.GetGraphic(20);
             QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
+        }
+
+        private void ConvertButton_Clicked(object sender, EventArgs e)
+        {
+            OnAppearing();
         }
     }
 }

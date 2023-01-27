@@ -22,9 +22,12 @@
                             <ViewCell Tapped="ViewCell_Tapped">                                
                                 <StackLayout Orientation="Vertical">
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding Name}" />
+                                        <Label Text="{Binding Name}" 
+                                               FontSize="21"
+                                               VerticalTextAlignment="Center"/>
                                         <Button x:Name="EditExpoPage"
                                             Text="Edit"
+                                                VerticalOptions="Center"
                                             CommandParameter="{Binding .}"
                                             Clicked="EditExpoPage_Clicked"
                                             HorizontalOptions="EndAndExpand"/>                                        

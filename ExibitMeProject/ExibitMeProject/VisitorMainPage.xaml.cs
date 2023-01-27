@@ -51,7 +51,7 @@ namespace ExibitMeProject
                         Aquestion = (Question)convertable;
                         App.CurrentAppVisitor.QuestionHistory.Add(Aquestion);
                     }
-                    if (result is Url)
+                    if (convertable is Url)
                     {
                         Url Aurl = new Url();
                         Aurl = (Url)convertable;

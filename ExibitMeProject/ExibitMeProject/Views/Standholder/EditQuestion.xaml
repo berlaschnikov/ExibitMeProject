@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExibitMeProject.Views.Standholder.EditQuestion">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Frame BackgroundColor="Black">
+                    <Label Text="Edit or delete your question here!"
+                           FontSize="32"
+                           HorizontalTextAlignment="Center"/>
+                </Frame>
+            </StackLayout>
+            
+            <ScrollView>
+                <StackLayout Margin="10">
+                    <Label Text="Name:"
+                       FontSize="21"/>
+                    <Entry x:Name="NameEntry"
+                       FontSize="21"/>
+                    <Label Text="Question 1:"
+                       FontSize="21"/>
+                    <Entry x:Name="Question1Entry"
+                       FontSize="21"/>
+                    <Label Text="Question 2:"
+                       FontSize="21"/>
+                    <Entry x:Name="Question2Entry"
+                       FontSize="21"/>
+                    <Label Text="Question 3:"
+                       FontSize="21"/>
+                    <Entry x:Name="Question3Entry"
+                       FontSize="21"/>
+                </StackLayout>
+            </ScrollView>
+            
+            
+            <StackLayout VerticalOptions="FillAndExpand"
+                         Margin="10">
+                <Button x:Name="EditButton"
+                    Text="Edit Question"
+                        FontSize="32"
+                        VerticalOptions="FillAndExpand"
+                    Clicked="EditButton_Clicked"/>
+                <Button x:Name="DeleteButton"
+                    Text="Delete Question"
+                        FontSize="32"
+                        VerticalOptions="FillAndExpand"
+                    Clicked="DeleteButton_Clicked"/>
+            </StackLayout>            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

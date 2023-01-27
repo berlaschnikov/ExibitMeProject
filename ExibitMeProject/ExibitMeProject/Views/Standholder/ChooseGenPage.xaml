@@ -6,18 +6,25 @@
         <StackLayout>
             <StackLayout>
                 <Frame BackgroundColor="Black">
-                    <Label Text=""/>
+                    <Label Text="Choose what you want to create a Qr code for."
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           FontSize="32"/>
                 </Frame>
             </StackLayout>
-            <StackLayout>
+            <StackLayout Margin="10"
+                         VerticalOptions="FillAndExpand">
                 <Button x:Name="InfoButton"
                     Text="Info"
+                        VerticalOptions="FillAndExpand"
                     Clicked="InfoButton_Clicked"/>
                 <Button x:Name="QuestionButton"
                     Text="Question"
+                        VerticalOptions="FillAndExpand"
                     Clicked="QuestionButton_Clicked"/>
                 <Button x:Name="UrlButton"
                     Text="Url"
+                        VerticalOptions="FillAndExpand"
                     Clicked="UrlButton_Clicked"/>
             </StackLayout>
         </StackLayout>        

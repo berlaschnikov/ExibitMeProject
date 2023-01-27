@@ -38,9 +38,17 @@ namespace ExibitMeProject
                 VerticalOptions = LayoutOptions.Center
             };
 
+            Button skipButton = new Button
+            {
+                Text = "Skip",
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            };
+            skipButton.Clicked += SkipButton_Clicked;
+
             Content = new StackLayout
             {
-                Children = { LoadingBar, _jokeLabel }
+                Children = { LoadingBar, _jokeLabel, skipButton }
             };
 
             _isRunning = true;
@@ -68,6 +76,11 @@ namespace ExibitMeProject
 
             var jokeModel = JsonConvert.DeserializeObject<JokeModel>(joke);
             _jokeLabel.Text = jokeModel.joke;
+        }
+        private void SkipButton_Clicked(object sender, EventArgs e)
+        {
+            _isRunning = false;
+            Navigation.PushAsync(new VisitorMainPage());
         }
     }
 

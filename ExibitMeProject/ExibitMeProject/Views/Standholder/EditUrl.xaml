@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExibitMeProject.Views.Standholder.EditUrl">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Frame BackgroundColor="Black">
+                    <Label Text="Edit or delete your url here!"
+                           FontSize="32"
+                           HorizontalTextAlignment="Center"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Margin="10"                         >
+                <Label Text="Name:"
+                       FontSize="21"/>
+                <Entry x:Name="NameEntry"
+                       FontSize="21"/>
+                <Label Text="URL"
+                       FontSize="21"/>
+                <Entry x:Name="UrlEntry"
+                       FontSize="21"/>
+            </StackLayout>
+            <StackLayout Margin="10" 
+                        VerticalOptions="FillAndExpand">
+                <Button x:Name="EditButton"
+                        Text="Edit URL"
+                        FontSize="32"
+                        VerticalOptions="FillAndExpand"
+                        Clicked="EditButton_Clicked"/>
+                <Button x:Name="DeleteButton"
+                        Text="Delete URL"
+                        FontSize="32"
+                        VerticalOptions="FillAndExpand"
+                        Clicked="DeleteButton_Clicked"/>
+            </StackLayout>            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

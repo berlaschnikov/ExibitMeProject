@@ -1,20 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              x:Class="ExibitMeProject.StandholderMainPage"
              Title="Standholder">
     <ContentPage.Content>
         <StackLayout>
-            <Frame BackgroundColor="{StaticResource PrimaryBackgroundColor}">
-                <StackLayout>
-                    <Label x:Name="TitleLabel"
-                                Text="Welcome to ExhibitMe for Standholders"
-                                TextColor="{StaticResource PrimaryTextColor}"
-                                HorizontalTextAlignment="Center"
-                                FontSize="28"
-                                HorizontalOptions="CenterAndExpand"/>
-                </StackLayout>
-            </Frame>
+            
+            <StackLayout>
+                <Frame BackgroundColor="Black">
+                    <Label HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Welcome to ExhibitMe for Standholders" FontSize="16" FontAttributes="Bold"/>
+                                <Span Text="{x:Static system:Environment.NewLine}"/>
+                                <Span Text="{x:Static system:Environment.NewLine}"/>
+                                <Span Text="Generate Qr Codes for visitors to scan"/>
+                                <Span Text="{x:Static system:Environment.NewLine}"/>
+                                <Span Text="View scanned or scan visitors as leads"/>
+                                <Span Text="{x:Static system:Environment.NewLine}"/>
+                                <Span Text="View Reviews"/>
+                                <Span Text="{x:Static system:Environment.NewLine}"/>
+                                <Span Text="View Turnover"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Frame>
+            </StackLayout>
             
             <StackLayout Margin="10"
                 VerticalOptions="FillAndExpand">
@@ -34,6 +46,7 @@
                     VerticalOptions="FillAndExpand"
                     Clicked="ViewTurnoverPage_Clicked"/>
             </StackLayout>
+            
         </StackLayout>        
     </ContentPage.Content>
 </ContentPage>
