@@ -44,7 +44,7 @@ namespace ExibitMeProject.Views.Standholder
             QRCodeGenerator qrGenerator = new();
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(serializedQuestion, QRCodeGenerator.ECCLevel.Q);
             PngByteQRCode qRCode = new(qrCodeData);
-            byte[] qrCodeBytes = qRCode.GetGraphic(100);
+            byte[] qrCodeBytes = qRCode.GetGraphic(20);
             CodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
         }
 

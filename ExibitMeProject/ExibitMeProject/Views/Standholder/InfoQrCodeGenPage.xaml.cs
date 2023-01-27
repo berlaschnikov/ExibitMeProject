@@ -17,7 +17,7 @@ namespace ExibitMeProject.Views.Standholder
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class InfoQrCodeGenPage : ContentPage
     {
-        public Info SelectedInfo { get; set; }
+        public Info selectedInfo { get; set; }
         public InfoQrCodeGenPage()
         {
             InitializeComponent();
@@ -47,19 +47,19 @@ namespace ExibitMeProject.Views.Standholder
         private void GenQrButton_Clicked(object sender, EventArgs e)
         {
             var button = (Button)sender;
-            SelectedInfo = (Info)button.CommandParameter;
-            string serializedQuestion = Newtonsoft.Json.JsonConvert.SerializeObject(SelectedInfo);
+            selectedInfo = (Info)button.CommandParameter;
+            var serializedQuestion = Newtonsoft.Json.JsonConvert.SerializeObject(selectedInfo);
             QRCodeGenerator qrGenerator = new();
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(serializedQuestion, QRCodeGenerator.ECCLevel.Q);
             PngByteQRCode qRCode = new(qrCodeData);
-            byte[] qrCodeBytes = qRCode.GetGraphic(100);
+            byte[] qrCodeBytes = qRCode.GetGraphic(20);
             CodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));            
         }
 
         private void ViewCell_Tapped(object sender, EventArgs e)
         {
             var viewCell = (ViewCell)sender;
-            SelectedInfo = (Info)viewCell.BindingContext;
+            selectedInfo = (Info)viewCell.BindingContext;
         }
     }
 }

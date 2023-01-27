@@ -18,8 +18,9 @@
                                        VerticalTextAlignment="Center"
                                                FontSize="21"/>
                                         <Button x:Name="GenQrButton"
-                                        Text="Gen QR"
-                                        HorizontalOptions="EndAndExpand"
+                                                Text="Gen QR"
+                                                CommandParameter="{Binding .}"
+                                                HorizontalOptions="EndAndExpand"
                                                 VerticalOptions="CenterAndExpand"
                                         Clicked="GenQrButton_Clicked"/>
                                     </StackLayout>
@@ -33,7 +34,7 @@
             <Image x:Name="CodeImage"
                     HorizontalOptions="Fill"/>
             <Button x:Name="CreateNewUrlButton"
-                    Text="Create New Info"
+                    Text="Create New Question"
                     Clicked="CreateNewUrlButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
