@@ -18,6 +18,14 @@
             
             <StackLayout Margin="10"
                 VerticalOptions="FillAndExpand">
+                <Button Text="QR Generator"
+                    VerticalOptions="FillAndExpand"
+                    Clicked="Button_Clicked"/>
+                
+                <Button Text="Leads"
+                    VerticalOptions="FillAndExpand"
+                    Clicked="Button_Clicked_1"/>
+                
                 <Button Text="View Reviews"
                     VerticalOptions="FillAndExpand"
                     Clicked="ViewReviewPage_Clicked"/>
@@ -25,22 +33,6 @@
                 <Button Text="View Turnover"
                     VerticalOptions="FillAndExpand"
                     Clicked="ViewTurnoverPage_Clicked"/>
-
-                <Button Text="QR Scanner"
-                    VerticalOptions="FillAndExpand"
-                    Clicked="GoToQRPage_Clicked"/>
-
-                <Button Text="QR Generator"
-                    VerticalOptions="FillAndExpand"
-                    Clicked="Button_Clicked"/>
-
-                <Button Text="Leads"
-                    VerticalOptions="FillAndExpand"
-                    Clicked="Button_Clicked_1"/>
-
-                <Button Text="View Visitors"
-                    VerticalOptions="FillAndExpand"
-                    Clicked="ViewVisitorPage_Clicked"/>
             </StackLayout>
         </StackLayout>        
     </ContentPage.Content>

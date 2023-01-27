@@ -3,16 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExibitMeProject.Views.Standholder.QuestionQrCodeGeneratorPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Entry x:Name="QuestionEntry1"/>
-            <Entry x:Name="QuestionEntry2"/>
-            <Entry x:Name="QuestionEntry3"/>
-            <Button x:Name="GenerateQrCodeButton"
-                    Text="Generate Qr-Code"
-                    Clicked="GenerateQrCodeButton_Clicked"/>
-            <Image x:Name="QrCodeImage"
-                   HorizontalOptions="CenterAndExpand"
-                   VerticalOptions="CenterAndExpand"/>
+        <StackLayout Margin="10">
+            <ScrollView>
+                <ListView x:Name="QuestionListView"
+                      ItemsSource="{Binding Question}"
+                      ItemSelected="QuestionListView_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Tapped="ViewCell_Tapped">
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal"
+                                         VerticalOptions="Center">
+                                        <Label Text="{Binding Name}" 
+                                       VerticalTextAlignment="Center"
+                                               FontSize="21"/>
+                                        <Button x:Name="GenQrButton"
+                                        Text="Gen QR"
+                                        HorizontalOptions="EndAndExpand"
+                                                VerticalOptions="CenterAndExpand"
+                                        Clicked="GenQrButton_Clicked"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+            <Image x:Name="CodeImage"
+                    HorizontalOptions="Fill"/>
+            <Button x:Name="CreateNewUrlButton"
+                    Text="Create New Info"
+                    Clicked="CreateNewUrlButton_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

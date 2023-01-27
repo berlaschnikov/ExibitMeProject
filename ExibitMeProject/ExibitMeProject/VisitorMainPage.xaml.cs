@@ -38,11 +38,27 @@ namespace ExibitMeProject
                 var result = await scanner.ScanAsync();
                 if (result != null)
                 {
-                    if(Uri.IsWellFormedUriString(result, UriKind.Absolute))
+                    var convertable = JsonConvert.DeserializeObject(result);
+                    if (convertable is Info) 
                     {
+                        Info Ainfo = new Info();
+                        Ainfo = (Info)convertable;
+                        App.CurrentAppVisitor.InfoHistory.Add(Ainfo);
+                    }
+                    if (convertable is Question)
+                    {
+                        Question Aquestion = new Question();
+                        Aquestion = (Question)convertable;
+                        App.CurrentAppVisitor.QuestionHistory.Add(Aquestion);
+                    }
+                    if (result is Url)
+                    {
+                        Url Aurl = new Url();
+                        Aurl = (Url)convertable;
+                        App.CurrentAppVisitor.UrlHistory.Add(Aurl);
                         try
                         {
-                            await Browser.OpenAsync(result, BrowserLaunchMode.SystemPreferred);
+                            await Browser.OpenAsync(Aurl.UrlBody, BrowserLaunchMode.SystemPreferred);
                         }
                         catch (Exception ex)
                         {
@@ -52,9 +68,7 @@ namespace ExibitMeProject
                     }
                     else
                     {
-                        var currentVisitor = App.CurrentAppVisitor;
-                        currentVisitor.AddUrlHistory(result);
-                        await Navigation.PushAsync(new Views.Visitor.VisitorScanResultPage(result));
+                        await DisplayAlert("Error", "Invalid QR code", "OK");
                     }
                 }
             }

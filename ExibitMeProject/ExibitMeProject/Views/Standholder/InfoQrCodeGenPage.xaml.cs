@@ -61,10 +61,5 @@ namespace ExibitMeProject.Views.Standholder
             var viewCell = (ViewCell)sender;
             SelectedInfo = (Info)viewCell.BindingContext;
         }
-
-        private void CloseButton_Clicked(object sender, EventArgs e)
-        {
-
-        }
     }
 }

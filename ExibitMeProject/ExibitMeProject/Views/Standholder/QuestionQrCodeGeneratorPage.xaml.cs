@@ -16,28 +16,47 @@ namespace ExibitMeProject.Views.Standholder
     public partial class QuestionQrCodeGeneratorPage : ContentPage
     {
         public string QuestionString { get; set; }
+        public Question SelectedQuestion { get; set; }
         public QuestionQrCodeGeneratorPage()
         {
-            InitializeComponent();
-            string Q1String = QuestionEntry1.Text;
-            string Q2String = QuestionEntry2.Text;
-            string Q3String = QuestionEntry3.Text;
-            QuestionString = "" + Q1String + ";" + Q2String + ";" + Q3String + "";
+            InitializeComponent();            
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<Question>();
+                var questions = conn.Table<Question>().ToList();
+                QuestionListView.ItemsSource = questions;
+            }
+        }
+        private void CreateNewUrlButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CreateQuestion());
         }
 
-        private void GenerateQrCodeButton_Clicked(object sender, EventArgs e)
+        private void GenQrButton_Clicked(object sender, EventArgs e)
         {
-            Question question = new Question();
-            question.QuestionBody1 = QuestionEntry1.Text;
-            question.QuestionBody2 = QuestionEntry2.Text;
-            question.QuestionBody3 = QuestionEntry3.Text;
-
-            string serializedQuestion = Newtonsoft.Json.JsonConvert.SerializeObject(question);
+            var button = (Button)sender;
+            SelectedQuestion = (Question)button.CommandParameter;
+            string serializedQuestion = Newtonsoft.Json.JsonConvert.SerializeObject(SelectedQuestion);
             QRCodeGenerator qrGenerator = new();
             QRCodeData qrCodeData = qrGenerator.CreateQrCode(serializedQuestion, QRCodeGenerator.ECCLevel.Q);
             PngByteQRCode qRCode = new(qrCodeData);
             byte[] qrCodeBytes = qRCode.GetGraphic(100);
-            QrCodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
+            CodeImage.Source = ImageSource.FromStream(() => new MemoryStream(qrCodeBytes));
+        }
+
+        private void ViewCell_Tapped(object sender, EventArgs e)
+        {
+            var viewCell = (ViewCell)sender;
+            SelectedQuestion = (Question)viewCell.BindingContext;
+        }
+
+        private void QuestionListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+
         }
     }
 }
