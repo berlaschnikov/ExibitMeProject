@@ -1,21 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ExibitMeProject.Views.Standholder.CreateUrl">
+             x:Class="ExibitMeProject.Views.Standholder.CreateUrl"
+             Title="Create URL">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            
+            <StackLayout>
+                <Frame BackgroundColor="Black">
+                    <Label Text="Create URL"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <StackLayout>
-                <Label Text="Name:"/>
-                <Entry x:Name="NameEntry"/>
-                <Label Text="URL"/>
-                <Entry x:Name="UrlEntry"/>
+                </Frame>
             </StackLayout>
+            
+            <StackLayout Margin="10">
+                <Label Text="Name:"
+                       FontSize="21"/>
+                <Entry x:Name="NameEntry"
+                       FontSize="21"/>
+                <Label Text="URL"
+                       FontSize="21"/>
+                <Entry x:Name="UrlEntry"
+                       FontSize="21"/>
+            </StackLayout>
+            
             <Button x:Name="CreateButton"
                     Text="Create URL"
+                    Margin="10"
+                    FontSize="32"
+                    VerticalOptions="FillAndExpand"
                     Clicked="CreateButton_Clicked"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

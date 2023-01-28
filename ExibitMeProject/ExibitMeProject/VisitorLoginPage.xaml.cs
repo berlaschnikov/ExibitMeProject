@@ -37,7 +37,7 @@ namespace ExibitMeProject
         private async void LoginButton_Clicked(object sender, EventArgs e)
         {
             SQLiteConnection sQLiteConnection = new(App.DatabaseLocation);
-            var visitor = sQLiteConnection.Table<Visitor>().Where(visitor => visitor.EmailAddress == EmailEntry.Text && visitor.Password == PasswordEntry.Text).FirstOrDefault();
+            Visitor visitor = sQLiteConnection.Table<Visitor>().Where(visitor => visitor.EmailAddress == EmailEntry.Text && visitor.Password == PasswordEntry.Text).FirstOrDefault();
             if (visitor != null)
             {
                 App.CurrentAppVisitor = visitor;
@@ -45,7 +45,7 @@ namespace ExibitMeProject
                 Xamarin.Essentials.Vibration.Vibrate(500);
                 var loadingPage = new JokePage();
                 await Navigation.PushAsync(loadingPage);
-                await Task.Delay(7000);
+                await Task.Delay(5000);
                 await Navigation.PushAsync(new VisitorMainPage());
             }
             else

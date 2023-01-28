@@ -8,9 +8,9 @@ namespace ExibitMeProject
     public partial class App : Application
     {
         public static string DatabaseLocation = string.Empty;
-        public static Organizer CurrentAppOrganizer;
-        public static Standholder CurrentAppStandholder;
-        public static Visitor CurrentAppVisitor;
+        public static Organizer CurrentAppOrganizer { get; set; }
+        public static Standholder CurrentAppStandholder { get; set; }
+        public static Visitor CurrentAppVisitor { get; set; }
         public static Expo CurrentAppExpo;
         public static Info CurrentAppInfo;
         public static Question CurrentAppQuestion;
@@ -34,6 +34,9 @@ namespace ExibitMeProject
 
         protected override void OnSleep()
         {
+            App.CurrentAppVisitor = null;
+            App.CurrentAppStandholder = null;
+            App.CurrentAppOrganizer = null;
         }
 
         protected override void OnResume()

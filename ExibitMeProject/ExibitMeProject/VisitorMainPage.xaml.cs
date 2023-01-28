@@ -1,6 +1,9 @@
 ﻿using ExibitMeProject.Models;
 using ExibitMeProject.Services;
+using ExibitMeProject.Views.Visitor;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +18,12 @@ namespace ExibitMeProject
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VisitorMainPage : ContentPage
     {
+        public Visitor UpdatedVisitor { get; set; }
         public VisitorMainPage()
         {
             InitializeComponent();
+            var currentVisitor = App.CurrentAppVisitor;
+            UpdatedVisitor = currentVisitor;
         }
 
         private void GenerateQrCodeFullButton_Clicked(object sender, EventArgs e)
@@ -32,50 +38,67 @@ namespace ExibitMeProject
 
         private async void ScanQrCodeButton_Clicked(object sender, EventArgs e)
         {
-            try
+            var scanner = DependencyService.Get<IQrScanningService>();
+            var result = await scanner.ScanAsync();
+
+            JObject jObject = JObject.Parse(result);
+            
+            if (jObject.ContainsKey("InfoBody"))
             {
-                var scanner = DependencyService.Get<IQrScanningService>();
-                var result = await scanner.ScanAsync();
-                if (result != null)
+                var info = JsonConvert.DeserializeObject<Info>(result);
+
+                int updatedRows;
+                if (UpdatedVisitor.InfoHistory == null) UpdatedVisitor.InfoHistory = new List<Info>();
+                UpdatedVisitor.InfoHistory.Append<Info>(info);
+                using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
                 {
-                    var convertable = JsonConvert.DeserializeObject(result);
-                    if (convertable is Info) 
-                    {
-                        Info Ainfo = new Info();
-                        Ainfo = (Info)convertable;
-                        App.CurrentAppVisitor.InfoHistory.Add(Ainfo);
-                    }
-                    if (convertable is Question)
-                    {
-                        Question Aquestion = new Question();
-                        Aquestion = (Question)convertable;
-                        App.CurrentAppVisitor.QuestionHistory.Add(Aquestion);
-                    }
-                    if (convertable is Url)
-                    {
-                        Url Aurl = new Url();
-                        Aurl = (Url)convertable;
-                        App.CurrentAppVisitor.UrlHistory.Add(Aurl);
-                        try
-                        {
-                            await Browser.OpenAsync(Aurl.UrlBody, BrowserLaunchMode.SystemPreferred);
-                        }
-                        catch (Exception ex)
-                        {
-                            await DisplayAlert("Error", ex.Message, "Ok");
-                            // An unexpected error occured. No browser may be installed on the device.
-                        }
-                    }
-                    else
-                    {
-                        await DisplayAlert("Error", "Invalid QR code", "OK");
-                    }
+                    sQLiteConnection.CreateTable<Visitor>();
+                    updatedRows = sQLiteConnection.Update(UpdatedVisitor);
+                }
+                App.CurrentAppVisitor.InfoHistory.Add(info);
+                await Navigation.PushAsync(new InfoScanResultPage(info));
+            }
+            else if (jObject.ContainsKey("QuestionBody1"))
+            {
+                var question = JsonConvert.DeserializeObject<Question>(result);
+
+                int updatedRows;
+                if (UpdatedVisitor.QuestionHistory == null) UpdatedVisitor.QuestionHistory = new List<Question>();
+                UpdatedVisitor.QuestionHistory.Append<Question>(question);
+                using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
+                {
+                    sQLiteConnection.CreateTable<Visitor>();
+                    updatedRows = sQLiteConnection.Update(UpdatedVisitor);
+                }
+                //App.CurrentAppVisitor.QuestionHistory.Add(question);
+                await Navigation.PushAsync(new VisitorScanResultPage(question));
+            }
+            else if (jObject.ContainsKey("UrlBody"))
+            {
+                var url = JsonConvert.DeserializeObject<Url>(result);
+
+                int updatedRows;
+                if (UpdatedVisitor.UrlHistory == null) UpdatedVisitor.UrlHistory = new List<Url>();
+                UpdatedVisitor.UrlHistory.Append<Url>(url);
+                using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
+                {
+                    sQLiteConnection.CreateTable<Visitor>();
+                    updatedRows = sQLiteConnection.Update(UpdatedVisitor);
+                }
+                App.CurrentAppVisitor.UrlHistory.Add(url);
+                try
+                {
+                    await Browser.OpenAsync(url.UrlBody, BrowserLaunchMode.SystemPreferred);
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("error", ex.Message, "ok");
+                    // an unexpected error occured. no browser may be installed on the device.
                 }
             }
-            catch (Exception ex)
+            else
             {
-                await DisplayAlert("Error", ex.Message, "Ok");
-                throw;
+                await DisplayAlert("error", "invalid qr code", "ok");
             }
         }
     }

@@ -51,6 +51,9 @@ namespace ExibitMeProject.Models
             Country = country;
             Phone = phone;
             Occupation = occupation;
+            InfoHistory = new List<Info>();
+            QuestionHistory = new List<Question>();
+            UrlHistory = new List<Url>();
         }
 
         public Visitor(string fullName, string emailAddress, string password, string street, string postalCode, string city, string state, string country, string phone, string occupation)

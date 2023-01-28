@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExibitMeProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,15 +18,13 @@ namespace ExibitMeProject.Views.Visitor
 		{
 			InitializeComponent ();
 		}
-        public VisitorScanResultPage(string result)
+        
+        public VisitorScanResultPage(Question question)
         {
             InitializeComponent();
-            Result = result;
-            string[] seperateQuestion = result.Split(';');
-            QuestionEntry1.Text = seperateQuestion[0];
-            QuestionEntry2.Text = seperateQuestion[1];
-            QuestionEntry3.Text = seperateQuestion[2];
+            QuestionEntry1.Text = question.QuestionBody1;
+            QuestionEntry2.Text = question.QuestionBody2;
+            QuestionEntry3.Text = question.QuestionBody3;
         }
-
     }
 }
