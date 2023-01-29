@@ -34,9 +34,9 @@ namespace ExibitMeProject
 
         protected override void OnSleep()
         {
-            App.CurrentAppVisitor = null;
-            App.CurrentAppStandholder = null;
-            App.CurrentAppOrganizer = null;
+            //App.CurrentAppVisitor = null;
+            //App.CurrentAppStandholder = null;
+            //App.CurrentAppOrganizer = null;
         }
 
         protected override void OnResume()

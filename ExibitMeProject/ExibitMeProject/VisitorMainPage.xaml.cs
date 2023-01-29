@@ -49,13 +49,21 @@ namespace ExibitMeProject
 
                 int updatedRows;
                 if (UpdatedVisitor.InfoHistory == null) UpdatedVisitor.InfoHistory = new List<Info>();
-                UpdatedVisitor.InfoHistory.Append<Info>(info);
-                using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
+                UpdatedVisitor.InfoHistory.Add(info);
+                try
                 {
-                    sQLiteConnection.CreateTable<Visitor>();
-                    updatedRows = sQLiteConnection.Update(UpdatedVisitor);
+                    using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
+                    {
+                        sQLiteConnection.CreateTable<Visitor>();
+                        updatedRows = sQLiteConnection.Update(UpdatedVisitor);
+                    }
                 }
-                App.CurrentAppVisitor.InfoHistory.Add(info);
+                catch (SQLiteException ex)
+                {
+                    await DisplayAlert("Error", "Failed to update visitor information: " + ex.Message, "OK");
+                }
+
+                //App.CurrentAppVisitor.InfoHistory.Append(info);
                 await Navigation.PushAsync(new InfoScanResultPage(info));
             }
             else if (jObject.ContainsKey("QuestionBody1"))
@@ -64,12 +72,20 @@ namespace ExibitMeProject
 
                 int updatedRows;
                 if (UpdatedVisitor.QuestionHistory == null) UpdatedVisitor.QuestionHistory = new List<Question>();
-                UpdatedVisitor.QuestionHistory.Append<Question>(question);
-                using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
+                UpdatedVisitor.QuestionHistory.Add(question);
+                try
                 {
-                    sQLiteConnection.CreateTable<Visitor>();
-                    updatedRows = sQLiteConnection.Update(UpdatedVisitor);
+                    using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
+                    {
+                        sQLiteConnection.CreateTable<Visitor>();
+                        updatedRows = sQLiteConnection.Update(UpdatedVisitor);
+                    }
                 }
+                catch(SQLiteException ex)
+                {
+                    await DisplayAlert("Error", "Failed to update visitor information: " + ex.Message, "OK");
+                }
+
                 //App.CurrentAppVisitor.QuestionHistory.Add(question);
                 await Navigation.PushAsync(new VisitorScanResultPage(question));
             }
@@ -79,13 +95,21 @@ namespace ExibitMeProject
 
                 int updatedRows;
                 if (UpdatedVisitor.UrlHistory == null) UpdatedVisitor.UrlHistory = new List<Url>();
-                UpdatedVisitor.UrlHistory.Append<Url>(url);
-                using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
+                UpdatedVisitor.UrlHistory.Add(url);
+                try
                 {
-                    sQLiteConnection.CreateTable<Visitor>();
-                    updatedRows = sQLiteConnection.Update(UpdatedVisitor);
+                    using (SQLiteConnection sQLiteConnection = new SQLiteConnection(App.DatabaseLocation))
+                    {
+                        sQLiteConnection.CreateTable<Visitor>();
+                        updatedRows = sQLiteConnection.Update(UpdatedVisitor);
+                    }
                 }
-                App.CurrentAppVisitor.UrlHistory.Add(url);
+                catch (SQLiteException ex)
+                {
+                    await DisplayAlert("Error", "Failed to update visitor information: " + ex.Message, "OK");
+                }
+
+                //App.CurrentAppVisitor.UrlHistory.Add(url);
                 try
                 {
                     await Browser.OpenAsync(url.UrlBody, BrowserLaunchMode.SystemPreferred);

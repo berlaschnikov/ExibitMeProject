@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ExhibitMeProject="clrnamespace:XFNavBarBackBtnClickOverride; assembly =XFNavBarBackBtnClickOverride"
              xmlns:local="clr-namespace:ExibitMeProject"
-             xmlns:system="clr-namespace:System;assembly=netstandard"
-             x:Class="ExibitMeProject.VisitorMainPage"
+             xmlns:system="clr-namespace:System;assembly=netstandard" 
+                         x:Class="ExibitMeProject.VisitorMainPage"
              Title="Visitor">
     <ContentPage.Content>
         <StackLayout>
@@ -42,7 +43,7 @@
                         FontSize="24"/>
 
                 <Button x:Name="HistoryButton"
-                    Text="Visited Stands" 
+                    Text="Scanned Codes" 
                     Clicked="HistoryButton_Clicked"
                         VerticalOptions="FillAndExpand"
                         FontSize="24"/>

@@ -16,5 +16,10 @@ namespace ExibitMeProject.Views.Standholder
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

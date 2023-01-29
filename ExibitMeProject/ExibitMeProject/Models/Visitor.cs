@@ -56,20 +56,6 @@ namespace ExibitMeProject.Models
             UrlHistory = new List<Url>();
         }
 
-        public Visitor(string fullName, string emailAddress, string password, string street, string postalCode, string city, string state, string country, string phone, string occupation)
-        {
-            FullName = fullName;
-            EmailAddress = emailAddress;
-            Password = password;
-            Street = street;
-            PostalCode = postalCode;
-            City = city;
-            State = state;
-            Country = country;
-            Phone = phone;
-            Occupation = occupation;
-        }
-
         public Visitor()
         {
             

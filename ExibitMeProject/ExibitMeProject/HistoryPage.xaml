@@ -6,10 +6,10 @@
         <StackLayout>
             <StackLayout>
                 <Label Text="Scanned Info"/>
-                <ListView>
+                <ListView x:Name="InfoListView">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
+                            <ViewCell BindingContext="{Binding Info}">
                                 <StackLayout>
                                     <Label Text="{Binding Name}" />
                                     <Label Text="{Binding Description}" />
@@ -22,14 +22,12 @@
 
             <StackLayout>
                 <Label Text="Scanned Qustions"/>
-                <ListView>
+                <ListView x:Name="QuestionListView">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
+                            <ViewCell BindingContext="{Binding Question}">
                                 <StackLayout>
-                                    <Label Text="{Binding Question1}" />
-                                    <Label Text="{Binding Question2}" />
-                                    <Label Text="{Binding Question3}" />
+                                    <Label Text="{Binding Name}" />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
@@ -39,12 +37,12 @@
 
             <StackLayout>
                 <Label Text="Scanned Url's"/>
-                <ListView>
+                <ListView x:Name="UrlListView">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
+                            <ViewCell BindingContext="{Binding Url}">
                                 <StackLayout>
-                                    <Label Text="{Binding Url}" />
+                                    <Label Text="{Binding UrlBody}" />
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

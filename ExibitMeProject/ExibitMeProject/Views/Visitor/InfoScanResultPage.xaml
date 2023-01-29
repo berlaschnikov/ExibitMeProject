@@ -4,10 +4,22 @@
              x:Class="ExibitMeProject.Views.Visitor.InfoScanResultPage">
     <ContentPage.Content>
         <StackLayout VerticalOptions="FillAndExpand">
+            <Label Text="Name:"
+                   FontSize="16"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
             <Label x:Name="InfoNameEntry"
-                   VerticalOptions="Start"/>
+                   VerticalOptions="Start"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
+            <Label Text="Info:"
+                   FontSize="16"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
             <Label x:Name="InfoEntry"
-                   VerticalOptions="FillAndExpand"/>
+                   VerticalOptions="FillAndExpand"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
