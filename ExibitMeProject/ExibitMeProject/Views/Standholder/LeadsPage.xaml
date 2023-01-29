@@ -4,10 +4,22 @@
              x:Class="ExibitMeProject.Views.Standholder.LeadsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Here will be list of previously scanned Leads"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="Add Leads By Scanning"/>
+            <ListView x:Name="LeadsListView"
+                      BindingContext="{Binding Leads}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell BindingContext="{Binding Visitor}">
+                            <StackLayout>
+                                <Label Text="{Binding FullName}" />
+                                <Label Text="{Binding EmailAddress}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="ScanLeadsButton"
+                Text="Add Leads By Scanning"
+                    Clicked="ScanLeadsButton_Clicked"/>
             <Button Text="Export Leads"/>
         </StackLayout>
     </ContentPage.Content>
